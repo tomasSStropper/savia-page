@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1B4332;
+  --secondary: #2D6A4F;
+  --accent: #52B788;
+  --light: #B7E4C7;
+  --cream: #F8F4E9;
+  --gold: #C9A84C;
+  --dark: #0D1F15;
+  --white: #FFFFFF;
+  --gray-100: #F5F5F0;
+  --gray-300: #D1D5C8;
+  --gray-600: #6B7280;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 40px;
+  --shadow-soft: 0 4px 24px rgba(27, 67, 50, 0.08);
+  --shadow-medium: 0 8px 40px rgba(27, 67, 50, 0.15);
+  --shadow-strong: 0 20px 60px rgba(27, 67, 50, 0.25);
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* Section padding utility */
+.section-padding {
+  @apply py-20 md:py-28 px-4 md:px-8;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Button base styles */
+.btn-primary {
+  @apply px-8 py-4 bg-primary text-white font-semibold rounded-full
+    hover:bg-gold transition-all duration-300 inline-flex items-center gap-2;
+}
+
+.btn-secondary {
+  @apply px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full
+    hover:bg-white/10 transition-all duration-300 inline-flex items-center gap-2;
+}
+
+/* Dot pattern background */
+.dot-pattern {
+  background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
