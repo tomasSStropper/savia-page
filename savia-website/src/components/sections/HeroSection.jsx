@@ -52,9 +52,7 @@ export default function HeroSection() {
         .btn-p:hover{background:#f2ede4;transform:translateY(-2px);box-shadow:0 12px 28px rgba(90,170,122,.28);}
         .btn-s{display:inline-flex;align-items:center;gap:8px;color:rgba(242,237,228,.72);font-size:.875rem;font-weight:300;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(242,237,228,.25);padding-bottom:2px;transition:all .25s;}
         .btn-s:hover{color:#f2ede4;border-color:#f2ede4;}
-        .nav-a{color:rgba(242,237,228,.7);text-decoration:none;font-size:.82rem;letter-spacing:.06em;font-weight:300;transition:color .2s;}
-        .nav-a:hover{color:#f2ede4;}
-        @media(max-width:768px){.rp{display:none!important}.hi{padding:0 24px!important}.ht{font-size:clamp(2.4rem,8vw,3.5rem)!important}.sr{gap:24px!important}.nav-ul{display:none!important}}
+        @media(max-width:768px){.rp{display:none!important}.hi{padding:0 24px!important}.ht{font-size:clamp(2.4rem,8vw,3.5rem)!important}.sr{gap:24px!important}}
       `}</style>
 
       <section className="sh" style={{position:"relative",minHeight:"100vh",background:"#0d2218",display:"flex",flexDirection:"column",overflow:"hidden"}}>
@@ -63,23 +61,6 @@ export default function HeroSection() {
         <div style={{position:"absolute",right:"38%",top:"30%",width:480,height:480,borderRadius:"50%",background:"radial-gradient(circle,rgba(90,170,122,.1) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}/>
         {/* left line */}
         <div style={{position:"absolute",left:28,top:"50%",transform:"translateY(-50%)",width:1,height:"38%",background:"linear-gradient(to bottom,transparent,#5aaa7a,transparent)",opacity:.35,zIndex:3}}/>
-
-        {/* NAV */}
-        <nav style={{position:"relative",zIndex:10,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"24px 64px",background:"linear-gradient(to bottom,rgba(13,34,24,.98) 0%,transparent 100%)"}}>
-          <a href="#" style={{display:"flex",alignItems:"center",gap:10,textDecoration:"none"}}>
-            <img src="/images/savia-logo.png" alt="Savia" style={{height:38,width:"auto",objectFit:"contain"}} onError={e=>e.target.style.display="none"}/>
-            <div style={{display:"flex",flexDirection:"column"}}>
-              <span style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"1.4rem",fontWeight:600,color:"#f2ede4",letterSpacing:".1em",lineHeight:1}}>Savia</span>
-              <span style={{fontSize:".55rem",letterSpacing:".25em",color:"#5aaa7a",opacity:.85,textTransform:"uppercase",marginTop:2}}>Sustainability Advisors</span>
-            </div>
-          </a>
-          <ul className="nav-ul" style={{display:"flex",gap:32,listStyle:"none",margin:0,padding:0}}>
-            {["Inicio","Quiénes Somos","Servicios","Proyectos","Blog","Contacto"].map(l=>(
-              <li key={l}><a className="nav-a" href={`#${l.toLowerCase().replace(/\s/g,"-")}`}>{l}</a></li>
-            ))}
-          </ul>
-          <button className="btn-p" style={{fontSize:".8rem"}}>Agendá una reunión <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-        </nav>
 
         {/* BODY */}
         <div className="hi" style={{flex:1,display:"flex",alignItems:"center",padding:"0 64px",position:"relative",zIndex:5}}>
