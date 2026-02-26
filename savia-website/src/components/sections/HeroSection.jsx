@@ -12,13 +12,11 @@ const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
 export default function HeroSection() {
   const [slide, setSlide]           = useState(0);
   const [audienceIdx, setAudienceIdx] = useState(0);
-  const [fading, setFading]         = useState(false);
   const [wordFading, setWordFading] = useState(false);
 
   useEffect(() => {
     const t = setInterval(() => {
-      setFading(true);
-      setTimeout(() => { setSlide(s => (s + 1) % SLIDES.length); setFading(false); }, 500);
+      setTimeout(() => { setSlide(s => (s + 1) % SLIDES.length); }, 500);
     }, 4000);
     return () => clearInterval(t);
   }, []);
@@ -66,7 +64,7 @@ export default function HeroSection() {
 
         {/* NAV */}
         <nav style={{position:"relative",zIndex:10,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"24px 64px",background:"linear-gradient(to bottom,rgba(13,34,24,.98) 0%,transparent 100%)"}}>
-          <a href="#" style={{display:"flex",alignItems:"center",gap:10,textDecoration:"none"}}>
+          <a href="/" style={{display:"flex",alignItems:"center",gap:10,textDecoration:"none"}}>
             <img src="/images/savia-logo.png" alt="Savia" style={{height:38,width:"auto",objectFit:"contain"}} onError={e=>e.target.style.display="none"}/>
             <div style={{display:"flex",flexDirection:"column"}}>
               <span style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"1.4rem",fontWeight:600,color:"#f2ede4",letterSpacing:".1em",lineHeight:1}}>Savia</span>
