@@ -12,13 +12,11 @@ const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
 export default function HeroSection() {
   const [slide, setSlide]           = useState(0);
   const [audienceIdx, setAudienceIdx] = useState(0);
-  const [fading, setFading]         = useState(false);
   const [wordFading, setWordFading] = useState(false);
 
   useEffect(() => {
     const t = setInterval(() => {
-      setFading(true);
-      setTimeout(() => { setSlide(s => (s + 1) % SLIDES.length); setFading(false); }, 500);
+      setTimeout(() => { setSlide(s => (s + 1) % SLIDES.length); }, 500);
     }, 4000);
     return () => clearInterval(t);
   }, []);
@@ -52,7 +50,7 @@ export default function HeroSection() {
         .btn-p:hover{background:#f2ede4;transform:translateY(-2px);box-shadow:0 12px 28px rgba(90,170,122,.28);}
         .btn-s{display:inline-flex;align-items:center;gap:8px;color:rgba(242,237,228,.72);font-size:.875rem;font-weight:300;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;border-bottom:1px solid rgba(242,237,228,.25);padding-bottom:2px;transition:all .25s;}
         .btn-s:hover{color:#f2ede4;border-color:#f2ede4;}
-        @media(max-width:768px){.rp{display:none!important}.hi{padding:0 24px!important}.ht{font-size:clamp(2.4rem,8vw,3.5rem)!important}.sr{gap:24px!important}}
+
       `}</style>
 
       <section className="sh" style={{position:"relative",minHeight:"100vh",background:"#0d2218",display:"flex",flexDirection:"column",overflow:"hidden"}}>
@@ -62,6 +60,7 @@ export default function HeroSection() {
         {/* left line */}
         <div style={{position:"absolute",left:28,top:"50%",transform:"translateY(-50%)",width:1,height:"38%",background:"linear-gradient(to bottom,transparent,#5aaa7a,transparent)",opacity:.35,zIndex:3}}/>
 
+ main
         {/* BODY */}
         <div className="hi" style={{flex:1,display:"flex",alignItems:"center",padding:"0 64px",position:"relative",zIndex:5}}>
 
