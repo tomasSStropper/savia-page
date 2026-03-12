@@ -1,7 +1,7 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Linkedin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
-import saviaLogo from '../../assets/savia_logo.png';
+import saviaLogo from '../../assets/logo_blanco.png';
 
 const Footer = () => {
   const { t } = useLang();
