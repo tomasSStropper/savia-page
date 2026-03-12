@@ -44,9 +44,7 @@ const Navbar = () => {
             <img
               src={scrolled ? logoVerde : logoBlanco}
               alt="SAVIA Sustainability Advisors"
-              className={`h-12 w-auto transition-all duration-400 ${
-                scrolled ? '' : 'brightness-0 invert'
-              }`}
+              className="h-12 w-auto transition-all duration-400"
             />
           </ScrollLink>
 
