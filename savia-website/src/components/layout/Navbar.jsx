@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLang } from '../context/LanguageContext';
+import saviaLogo from '../../assets/savia_logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,10 +18,12 @@ const Navbar = () => {
 
   const navLinks = [
     { label: t.nav.home, to: 'inicio' },
-    { label: t.nav.about, to: 'enfoque' },
     { label: t.nav.services, to: 'servicios' },
-    { label: t.nav.team, to: 'equipo' },
+    { label: t.nav.howWeWork, to: 'como-trabajamos' },
+    { label: t.nav.about, to: 'quienes-somos' },
     { label: t.nav.projects, to: 'proyectos' },
+    { label: t.nav.blog, to: 'blog' },
+    { label: t.nav.gallery, to: 'galeria' },
     { label: t.nav.contact, to: 'contacto' },
   ];
 
@@ -37,22 +40,13 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-20">
           {/* Logo */}
           <ScrollLink to="inicio" smooth duration={800} className="cursor-pointer">
-            <div className="flex flex-col">
-              <span
-                className={`font-display text-2xl font-bold tracking-wide transition-colors duration-400 ${
-                  scrolled ? 'text-primary' : 'text-white'
-                }`}
-              >
-                SAVIA
-              </span>
-              <span
-                className={`text-[10px] tracking-[0.2em] uppercase font-body transition-colors duration-400 ${
-                  scrolled ? 'text-gray-500' : 'text-white/60'
-                }`}
-              >
-                Sustainability Advisors
-              </span>
-            </div>
+            <img
+              src={saviaLogo}
+              alt="SAVIA Sustainability Advisors"
+              className={`h-12 w-auto transition-all duration-400 ${
+                scrolled ? '' : 'brightness-0 invert'
+              }`}
+            />
           </ScrollLink>
 
           {/* Desktop Nav */}

@@ -2,12 +2,14 @@ const translations = {
   es: {
     nav: {
       home: "Inicio",
-      about: "Enfoque",
       services: "Servicios",
-      team: "Equipo",
+      howWeWork: "Cómo trabajamos",
+      about: "Quiénes somos",
       projects: "Proyectos",
+      blog: "Blog y Noticias",
+      gallery: "Galería",
       contact: "Contacto",
-      cta: "Diagnóstico Gratuito",
+      cta: "Agendá una reunión",
     },
     hero: {
       badge: "Consultoría Ambiental Certificada",
@@ -66,6 +68,36 @@ const translations = {
       badge: "Testimonios",
       title: "Lo que dicen nuestros clientes",
     },
+    blog: {
+      badge: "Blog y Noticias",
+      title: "Últimas novedades en sostenibilidad",
+      readMore: "Leer más",
+      posts: [
+        {
+          title: "Tendencias en sostenibilidad corporativa para 2026",
+          excerpt: "Descubrí las principales tendencias que están transformando la forma en que las empresas abordan la sostenibilidad en Costa Rica y la región centroamericana.",
+          date: "10 Mar 2026",
+          category: "Sostenibilidad",
+        },
+        {
+          title: "Guía para obtener la Bandera Azul Ecológica",
+          excerpt: "Todo lo que necesitás saber sobre el programa Bandera Azul Ecológica: requisitos, proceso de aplicación y beneficios para tu organización.",
+          date: "25 Feb 2026",
+          category: "Certificaciones",
+        },
+        {
+          title: "Soluciones basadas en naturaleza: casos de éxito",
+          excerpt: "Exploramos cómo las soluciones basadas en naturaleza están generando impacto positivo en comunidades y empresas de Costa Rica.",
+          date: "12 Feb 2026",
+          category: "Naturaleza",
+        },
+      ],
+    },
+    gallery: {
+      badge: "Galería",
+      title: "Nuestro trabajo en imágenes",
+      categories: ["Todos", "Talleres", "Campo", "Empresas", "Comunidades"],
+    },
     contact: {
       badge: "Contacto",
       title: "Comienza tu transformación sostenible hoy",
@@ -112,12 +144,14 @@ const translations = {
   en: {
     nav: {
       home: "Home",
-      about: "Approach",
       services: "Services",
-      team: "Team",
+      howWeWork: "How we work",
+      about: "About us",
       projects: "Projects",
+      blog: "Blog & News",
+      gallery: "Gallery",
       contact: "Contact",
-      cta: "Free Diagnosis",
+      cta: "Schedule a meeting",
     },
     hero: {
       badge: "Certified Environmental Consulting",
@@ -175,6 +209,36 @@ const translations = {
     testimonials: {
       badge: "Testimonials",
       title: "What our clients say",
+    },
+    blog: {
+      badge: "Blog & News",
+      title: "Latest sustainability updates",
+      readMore: "Read more",
+      posts: [
+        {
+          title: "Corporate sustainability trends for 2026",
+          excerpt: "Discover the main trends transforming how companies approach sustainability in Costa Rica and the Central American region.",
+          date: "Mar 10, 2026",
+          category: "Sustainability",
+        },
+        {
+          title: "Guide to obtaining the Blue Flag Ecological certification",
+          excerpt: "Everything you need to know about the Blue Flag Ecological program: requirements, application process and benefits for your organization.",
+          date: "Feb 25, 2026",
+          category: "Certifications",
+        },
+        {
+          title: "Nature-based solutions: success stories",
+          excerpt: "We explore how nature-based solutions are generating positive impact in communities and businesses across Costa Rica.",
+          date: "Feb 12, 2026",
+          category: "Nature",
+        },
+      ],
+    },
+    gallery: {
+      badge: "Gallery",
+      title: "Our work in images",
+      categories: ["All", "Workshops", "Field", "Business", "Communities"],
     },
     contact: {
       badge: "Contact",
