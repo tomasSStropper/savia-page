@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link as ScrollLink } from 'react-scroll';
 import { useLang } from '../context/LanguageContext';
-import saviaLogo from '../../assets/savia_logo.png';
+import logoBlanco from '../../assets/logo_blanco.png';
+import logoVerde from '../../assets/logo_verde.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <ScrollLink to="inicio" smooth duration={800} className="cursor-pointer">
             <img
-              src={saviaLogo}
+              src={scrolled ? logoVerde : logoBlanco}
               alt="SAVIA Sustainability Advisors"
               className={`h-12 w-auto transition-all duration-400 ${
                 scrolled ? '' : 'brightness-0 invert'
