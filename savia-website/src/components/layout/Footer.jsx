@@ -1,6 +1,7 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { Linkedin, Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
+import saviaLogo from '../../assets/savia_logo.png';
 
 const Footer = () => {
   const { t } = useLang();
@@ -22,10 +23,11 @@ const Footer = () => {
           {/* Column 1: Logo */}
           <div>
             <div className="mb-4">
-              <span className="font-display text-2xl font-bold text-white">SAVIA</span>
-              <span className="block text-[10px] tracking-[0.2em] uppercase text-white/40">
-                Sustainability Advisors
-              </span>
+              <img
+                src={saviaLogo}
+                alt="SAVIA Sustainability Advisors"
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-sm text-white/60 mb-6 leading-relaxed">
               {t.footer.description}
@@ -74,9 +76,10 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">{t.footer.companyTitle}</h4>
             <ul className="space-y-3 text-sm">
               {[
-                { label: t.footer.aboutUs, to: 'enfoque' },
+                { label: t.footer.aboutUs, to: 'quienes-somos' },
                 { label: t.footer.ourProjects, to: 'proyectos' },
                 { label: t.footer.ourTeam, to: 'equipo' },
+                { label: t.footer.blog, to: 'blog' },
               ].map(({ label, to }) => (
                 <li key={to}>
                   <ScrollLink

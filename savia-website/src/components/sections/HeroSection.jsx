@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 
 const SLIDES = [
-  { img: "/images/hero-circle.jpg",    label: "Talleres comunitarios" },
-  { img: "/images/hero-outdoor.jpg",   label: "Educación en campo" },
-  { img: "/images/hero-kids.jpg",      label: "Ciencia ciudadana" },
-  { img: "/images/hero-workshop.jpg",  label: "Diagnósticos empresariales" },
+  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos institucionales y empresariales" },
+  { img: null,                           label: "Trabajo de campo", placeholder: true },
+  { img: "/images/hero-kids.jpg",        label: "Ciencia ciudadana" },
+  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos empresariales y organizacionales" },
+  { img: "/images/hero-circle.jpg",      label: "Talleres comunitarios" },
+  { img: "/images/hero-outdoor.jpg",     label: "Educación en campo" },
 ];
 
 const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
@@ -78,7 +80,7 @@ export default function HeroSection() {
 
             <div className="bp f1" style={{marginBottom:32}}>
               <div style={{width:6,height:6,borderRadius:"50%",background:"#5aaa7a",flexShrink:0}}/>
-              <span style={{fontSize:".72rem",color:"rgba(242,237,228,.8)",letterSpacing:".12em",textTransform:"uppercase"}}>Consultoría Ambiental · Costa Rica</span>
+              <span style={{fontSize:".72rem",color:"rgba(242,237,228,.8)",letterSpacing:".12em",textTransform:"uppercase"}}>Impulsando soluciones basadas en naturaleza.</span>
             </div>
 
             <h1 className="ht f2" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 8px 0",letterSpacing:"-.01em"}}>
@@ -99,7 +101,7 @@ export default function HeroSection() {
             </div>
 
             <div className="sr f6" style={{display:"flex",alignItems:"flex-start",gap:0,paddingTop:32,borderTop:"1px solid rgba(242,237,228,.1)"}}>
-              {[{num:"25+",label:"Años de experiencia"},{num:"100+",label:"Proyectos realizados"},{num:"4",label:"Sectores de impacto"}].map((s,i)=>(
+              {[{num:"25+",label:"Años de experiencia"},{num:"5000+",label:"Personas abordadas"},{num:"40+",label:"Empresas asesoradas"}].map((s,i)=>(
                 <div key={i} style={{display:"flex",alignItems:"flex-start",gap:0}}>
                   {i>0&&<div style={{width:1,background:"rgba(242,237,228,.12)",alignSelf:"stretch",margin:"0 32px"}}/>}
                   <div>
@@ -114,7 +116,13 @@ export default function HeroSection() {
           {/* RIGHT PANEL */}
           <div className="rp" style={{width:"42%",height:"80vh",position:"relative",borderRadius:6,overflow:"hidden",flexShrink:0}}>
             {SLIDES.map((s,i)=>(
-              <img key={i} src={s.img} alt={s.label} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",opacity:slide===i?1:0,transition:"opacity .6s ease"}}/>
+              s.placeholder ? (
+                <div key={i} style={{position:"absolute",inset:0,width:"100%",height:"100%",background:"linear-gradient(135deg,#1B4332 0%,#0d2218 100%)",display:"flex",alignItems:"center",justifyContent:"center",opacity:slide===i?1:0,transition:"opacity .6s ease"}}>
+                  <span style={{color:"#fff",fontSize:"1.2rem",fontFamily:"'DM Sans',sans-serif",letterSpacing:".05em"}}>Falta imagen</span>
+                </div>
+              ) : (
+                <img key={i} src={s.img} alt={s.label} style={{position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"cover",opacity:slide===i?1:0,transition:"opacity .6s ease"}}/>
+              )
             ))}
             {/* overlays */}
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,34,24,.75) 0%,rgba(13,34,24,.1) 60%,transparent 100%)",zIndex:1}}/>
