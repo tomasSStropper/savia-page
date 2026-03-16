@@ -11,7 +11,7 @@ const SLIDES = [
 
 const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
 
-export default function HeroSection() {
+export default function HeroSection({ id }) {
   const [slide, setSlide]           = useState(0);
   const [audienceIdx, setAudienceIdx] = useState(0);
   const [wordFading, setWordFading] = useState(false);
@@ -64,7 +64,7 @@ export default function HeroSection() {
 
       `}</style>
 
-      <section className="sh" style={{position:"relative",minHeight:"100vh",background:"#0d2218",display:"flex",flexDirection:"column",overflow:"hidden"}}>
+      <section id={id} className="sh" style={{position:"relative",minHeight:"100vh",background:"#0d2218",display:"flex",flexDirection:"column",overflow:"hidden"}}>
 
         {/* orb */}
         <div style={{position:"absolute",right:"38%",top:"30%",width:480,height:480,borderRadius:"50%",background:"radial-gradient(circle,rgba(90,170,122,.1) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}/>
