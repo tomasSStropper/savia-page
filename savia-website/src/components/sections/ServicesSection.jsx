@@ -14,43 +14,6 @@ const WORD_PAIRS = [
   'Organizaciones, Empresas',
 ];
 
-const NEW_BLOCKS = [
-  {
-    title: 'Gestión de Residuos y Economía Circular',
-    items: [
-      'Planes de manejo de residuos sólidos y líquidos a nivel empresarial, institucional y para eventos masivos.',
-      'Estrategias de reducción, reutilización y reciclaje a nivel empresarial y comunitario.',
-      'Diseño de procesos basados en principios de circularidad y reducción de huella hídrica y de carbono.',
-    ],
-  },
-  {
-    title: 'Diagnósticos y Estrategias de Sostenibilidad',
-    items: [
-      'Evaluaciones de huella de carbono y agua.',
-      'Auditorías de sostenibilidad.',
-      'Planes de acción para la descarbonización y metas de emisiones netas cero.',
-      'Diseño de reportes del "Qué" (ESG) al "Cómo" (ACV).',
-    ],
-  },
-  {
-    title: 'Educación y Capacitación para el Desarrollo Sostenible',
-    items: [
-      'Charlas y talleres en distintos temas (consumo responsable, reutilización, reciclaje, manejo de residuos orgánicos y especiales, alternativas al uso de materiales plásticos y productos químicos, manejo de sistemas de tratamiento de aguas residuales).',
-      'Diseño, planificación y ejecución de actividades de sensibilización ambiental (festivales, cinéforos, actividades lúdicas y de expresión artística, limpiezas de espacios públicos con disposición final responsable...).',
-      'Diseño, implementación y evaluación de programas y proyectos educativos.',
-      'Formación en cumplimiento normativo ambiental.',
-    ],
-  },
-  {
-    title: 'Interpretación Ambiental',
-    items: [
-      'Interpretación de senderos y señalización en fincas y proyectos eco-turísticos.',
-      'Inventarios de biodiversidad. Estos pueden hacerse de forma personalizada o de forma participativa mediante ciencia ciudadana.',
-      'Elaboración de materiales didácticos y de comunicación estratégica.',
-    ],
-  },
-];
-
 const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
@@ -151,29 +114,6 @@ const ServicesSection = ({ id }) => {
           ))}
         </div>
 
-        {/* New content blocks (Cambio 4) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {NEW_BLOCKS.map((block) => (
-            <motion.div
-              key={block.title}
-              variants={fadeInUp}
-              className="bg-white rounded-2xl p-8 border border-accent/20"
-              style={{ boxShadow: '0 4px 24px rgba(27, 67, 50, 0.08)' }}
-            >
-              <h3 className="font-display text-xl font-bold text-primary mb-4">
-                {block.title}
-              </h3>
-              <ul className="space-y-3">
-                {block.items.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600 font-body leading-relaxed">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-1.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
       </motion.div>
     </section>
   );
