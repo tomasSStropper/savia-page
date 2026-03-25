@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Mail, Phone, MapPin, Clock, MessageCircle, CheckCircle, Send } from 'lucide-react';
+import { Mail, Phone, Clock, MessageCircle, CheckCircle, Send } from 'lucide-react';
 import { useScrollAnimation, fadeInLeft, fadeInRight, staggerContainer } from '../../hooks/useScrollAnimation';
 import SectionTitle from '../ui/SectionTitle';
 import { useLang } from '../context/LanguageContext';
@@ -58,12 +58,11 @@ const ContactSection = ({ id }) => {
               {t.contact.info.title}
             </h3>
             <div className="space-y-6 mb-10">
-              {[
-                { icon: Mail, text: t.contact.info.email },
-                { icon: Phone, text: t.contact.info.phone },
-                { icon: MapPin, text: t.contact.info.location },
-                { icon: Clock, text: t.contact.info.hours },
-              ].map(({ icon: Icon, text }, i) => (
+                {[
+                  { icon: Mail, text: t.contact.info.email },
+                  { icon: Phone, text: t.contact.info.phone },
+                  { icon: Clock, text: t.contact.info.hours },
+                ].map(({ icon: Icon, text }, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                     <Icon size={22} className="text-accent" />
