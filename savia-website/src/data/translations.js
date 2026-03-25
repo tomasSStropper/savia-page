@@ -38,6 +38,7 @@ const translations = {
     },
     services: {
       badge: "Nuestros Servicios",
+      titleLine1: "Soluciones integrales a medida para",
       title: "Soluciones integrales a medida para empresas, instituciones y comunidades",
       description1: "Asesoramos en la adopción de estrategias para el cumplimiento de estándares de sostenibilidad.",
       description2: "Impulsamos la integración intersectorial, creando sinergias entre instituciones públicas y privadas y distintos actores sociales para mejorar el entorno productivo y de las comunidades.",
@@ -217,6 +218,7 @@ const translations = {
     },
     services: {
       badge: "Our Services",
+      titleLine1: "Comprehensive tailored solutions for",
       title: "Comprehensive tailored solutions for businesses, institutions, and communities",
       description1: "We advise organizations in adopting strategies to meet sustainability standards.",
       description2: "We promote cross-sector integration, creating synergies between public and private institutions and social stakeholders to strengthen productive environments and communities.",
