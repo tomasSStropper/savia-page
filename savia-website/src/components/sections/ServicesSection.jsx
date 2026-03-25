@@ -5,15 +5,6 @@ import ServiceCard from '../ui/ServiceCard';
 import { services } from '../../data/services';
 import { useLang } from '../context/LanguageContext';
 
-const WORD_PAIRS = [
-  'Empresas, Instituciones',
-  'Personas, Organizaciones',
-  'Comunidades, Instituciones',
-  'Construcciones, Empresas',
-  'Personas, Comunidades',
-  'Organizaciones, Empresas',
-];
-
 const UPDATED_SERVICES = [
   {
     title: 'Gestión de Residuos y Economía Circular',
@@ -40,6 +31,7 @@ const UPDATED_SERVICES = [
 const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
+  const WORD_PAIRS = t.services.wordPairs;
   const [pairIndex, setPairIndex] = useState(() => Math.floor(Math.random() * WORD_PAIRS.length));
   const mergedServices = services.slice(0, 4).map((service, index) => ({
     ...service,
@@ -62,7 +54,7 @@ const ServicesSection = ({ id }) => {
       });
     }, 3500);
     return () => clearInterval(interval);
-  }, []);
+  }, [WORD_PAIRS]);
 
   return (
     <section id={id} className="section-padding bg-white" ref={ref}>
@@ -88,7 +80,7 @@ const ServicesSection = ({ id }) => {
             variants={fadeInUp}
             className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary"
           >
-            Soluciones integrales a medida para
+            {t.services.titleLine1}
           </motion.h2>
           <div className="h-16 md:h-20 flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="wait">
@@ -109,13 +101,13 @@ const ServicesSection = ({ id }) => {
         {/* Description paragraphs (Cambio 3) */}
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <p className="text-gray-600 font-body text-base leading-relaxed">
-            Asesoramos en la adopción de estrategias para el cumplimiento de estándares de sostenibilidad.
+            {t.services.desc1}
           </p>
           <p className="text-gray-600 font-body text-base leading-relaxed">
-            Impulsamos la integración intersectorial, creando sinergias entre instituciones públicas y privadas y de distintos actores sociales para mejorar el entorno productivo y de las comunidades.
+            {t.services.desc2}
           </p>
           <p className="text-gray-600 font-body text-base leading-relaxed">
-            Brindamos asesoría técnica para la formulación de políticas públicas, normativas y planificación a nivel nacional y local.
+            {t.services.desc3}
           </p>
         </motion.div>
 

@@ -1,35 +1,42 @@
 import { useState, useEffect } from "react";
+import { useLang } from '../context/LanguageContext';
 
-const SLIDES = [
-  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos institucionales y empresariales" },
-  { img: null,                           label: "Trabajo de campo", placeholder: true },
-  { img: "/images/hero-kids.jpg",        label: "Ciencia ciudadana" },
-  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos empresariales y organizacionales" },
-  { img: "/images/hero-circle.jpg",      label: "Talleres comunitarios" },
-  { img: "/images/hero-outdoor.jpg",     label: "Educación en campo" },
+const BASE_SLIDES = [
+  { img: "/images/hero-workshop.jpg" },
+  { img: null, placeholder: true },
+  { img: "/images/hero-kids.jpg" },
+  { img: "/images/hero-workshop.jpg" },
+  { img: "/images/hero-circle.jpg" },
+  { img: "/images/hero-outdoor.jpg" },
 ];
 
-const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
-
 export default function HeroSection({ id }) {
+  const { t } = useLang();
   const [slide, setSlide]           = useState(0);
   const [audienceIdx, setAudienceIdx] = useState(0);
   const [wordFading, setWordFading] = useState(false);
+  const AUDIENCES = t.hero.audiences;
+  const SLIDES = BASE_SLIDES.map((slideItem, index) => ({
+    ...slideItem,
+    label: t.hero.slideLabels[index],
+  }));
+  const slidesCount = SLIDES.length;
+  const audiencesCount = AUDIENCES.length;
 
   useEffect(() => {
     const t = setInterval(() => {
-      setTimeout(() => { setSlide(s => (s + 1) % SLIDES.length); }, 500);
+      setTimeout(() => { setSlide(s => (s + 1) % slidesCount); }, 500);
     }, 4000);
     return () => clearInterval(t);
-  }, []);
+  }, [slidesCount]);
 
   useEffect(() => {
     const t = setInterval(() => {
       setWordFading(true);
-      setTimeout(() => { setAudienceIdx(i => (i + 1) % AUDIENCES.length); setWordFading(false); }, 300);
+      setTimeout(() => { setAudienceIdx(i => (i + 1) % audiencesCount); setWordFading(false); }, 300);
     }, 2500);
     return () => clearInterval(t);
-  }, []);
+  }, [audiencesCount]);
 
   return (
     <>
@@ -70,8 +77,6 @@ export default function HeroSection({ id }) {
         <div style={{position:"absolute",right:"38%",top:"30%",width:480,height:480,borderRadius:"50%",background:"radial-gradient(circle,rgba(90,170,122,.1) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}/>
         {/* left line */}
         <div style={{position:"absolute",left:28,top:"50%",transform:"translateY(-50%)",width:1,height:"38%",background:"linear-gradient(to bottom,transparent,#5aaa7a,transparent)",opacity:.35,zIndex:3}}/>
-
- main
         {/* BODY */}
         <div className="hi" style={{flex:1,display:"flex",alignItems:"center",padding:"0 64px",position:"relative",zIndex:5}}>
 
@@ -80,11 +85,11 @@ export default function HeroSection({ id }) {
 
             <div className="bp f1" style={{marginBottom:32}}>
               <div style={{width:6,height:6,borderRadius:"50%",background:"#5aaa7a",flexShrink:0}}/>
-              <span style={{fontSize:".72rem",color:"rgba(242,237,228,.8)",letterSpacing:".12em",textTransform:"uppercase"}}>Impulsando soluciones basadas en naturaleza.</span>
+              <span style={{fontSize:".72rem",color:"rgba(242,237,228,.8)",letterSpacing:".12em",textTransform:"uppercase"}}>{t.hero.badge}</span>
             </div>
 
             <h1 className="ht f2" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 8px 0",letterSpacing:"-.01em"}}>
-              Soluciones basadas<br/>en naturaleza, para
+              {t.hero.titleLine1}<br/>{t.hero.titleLine2}
             </h1>
 
             <div className="f3" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,marginBottom:28,height:"1.15em",overflow:"hidden"}}>
@@ -92,16 +97,16 @@ export default function HeroSection({ id }) {
             </div>
 
             <p className="f4" style={{fontSize:"1rem",fontWeight:300,lineHeight:1.75,color:"rgba(242,237,228,.62)",maxWidth:500,margin:"0 0 40px 0",letterSpacing:".01em"}}>
-              Asesoramos a personas, empresas, instituciones y comunidades en la implementación de estrategias sostenibles que generan valor ambiental, social y económico.
+              {t.hero.subtitle}
             </p>
 
             <div className="f5" style={{display:"flex",alignItems:"center",gap:28,marginBottom:56,flexWrap:"wrap"}}>
-              <button className="btn-p">Conocé nuestros servicios <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-              <button className="btn-s">Ver proyectos →</button>
+              <button className="btn-p">{t.hero.ctaPrimary} <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button className="btn-s">{t.hero.ctaSecondary}</button>
             </div>
 
             <div className="sr f6" style={{display:"flex",alignItems:"flex-start",gap:0,paddingTop:32,borderTop:"1px solid rgba(242,237,228,.1)"}}>
-              {[{num:"25+",label:"Años de experiencia"},{num:"5000+",label:"Personas abordadas"},{num:"40+",label:"Empresas asesoradas"}].map((s,i)=>(
+              {[{num:t.hero.stat1Num,label:t.hero.stat1Label},{num:t.hero.stat2Num,label:t.hero.stat2Label},{num:t.hero.stat3Num,label:t.hero.stat3Label}].map((s,i)=>(
                 <div key={i} style={{display:"flex",alignItems:"flex-start",gap:0}}>
                   {i>0&&<div style={{width:1,background:"rgba(242,237,228,.12)",alignSelf:"stretch",margin:"0 32px"}}/>}
                   <div>
@@ -128,7 +133,7 @@ export default function HeroSection({ id }) {
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to top,rgba(13,34,24,.75) 0%,rgba(13,34,24,.1) 60%,transparent 100%)",zIndex:1}}/>
             <div style={{position:"absolute",inset:0,background:"linear-gradient(to right,#0d2218 0%,transparent 25%)",zIndex:1}}/>
             {/* eslogan */}
-            <div style={{position:"absolute",top:24,left:24,zIndex:2,fontFamily:"'Cormorant Garamond',serif",fontSize:".72rem",fontStyle:"italic",color:"rgba(242,237,228,.4)",letterSpacing:".08em"}}>Empowering nature-wise solutions</div>
+            <div style={{position:"absolute",top:24,left:24,zIndex:2,fontFamily:"'Cormorant Garamond',serif",fontSize:".72rem",fontStyle:"italic",color:"rgba(242,237,228,.4)",letterSpacing:".08em"}}>{t.hero.badge}</div>
             {/* corner top right */}
             <div style={{position:"absolute",top:20,right:20,width:28,height:28,borderTop:"2px solid #b8935a",borderRight:"2px solid #b8935a",zIndex:2,opacity:.7}}/>
             {/* corner bottom left */}
@@ -148,7 +153,7 @@ export default function HeroSection({ id }) {
         {/* SCROLL */}
         <div style={{position:"absolute",bottom:28,left:"50%",transform:"translateX(-50%)",display:"flex",flexDirection:"column",alignItems:"center",gap:8,zIndex:5}}>
           <div className="scl" style={{width:1,height:36,background:"linear-gradient(to bottom,#5aaa7a,transparent)"}}/>
-          <span style={{fontSize:".6rem",letterSpacing:".2em",color:"rgba(242,237,228,.28)",textTransform:"uppercase"}}>Explorar</span>
+          <span style={{fontSize:".6rem",letterSpacing:".2em",color:"rgba(242,237,228,.28)",textTransform:"uppercase"}}>{t.hero.explore}</span>
         </div>
 
       </section>

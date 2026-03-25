@@ -8,26 +8,39 @@ const ProcessSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
 
+
+  const stepVariants = {
+    hidden: { opacity: 0, y: 28 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.25,
+        ease: [0.4, 0, 0.2, 1],
+        delay: i * 0.7,
+      },
+    }),
+  };
   const steps = [
     {
       icon: Search,
-      title: 'Diagnóstico Inicial',
-      desc: 'Analizamos el estado actual del sitio para el establecimiento de la línea base.',
+      title: t.process.step1Title,
+      desc: t.process.step1Desc,
     },
     {
       icon: FileText,
-      title: 'De narrativa → a cuantificación',
-      desc: 'Formulamos un plan contextualizado con metas claras, tiempos y KPIs medibles.',
+      title: t.process.step2Title,
+      desc: t.process.step2Desc,
     },
     {
       icon: Settings,
-      title: 'Implementación',
-      desc: 'Acompañamos la ejecución con soporte continuo e insumos.',
+      title: t.process.step3Title,
+      desc: t.process.step3Desc,
     },
     {
       icon: Award,
-      title: 'De presentaciones ESG → a modelos de ACV',
-      desc: 'Llevamos la comunicación de resultados a procesos de evaluación de impactos reales de productos o procesos a través de Análisis de Ciclo de Vida.',
+      title: t.process.step4Title,
+      desc: t.process.step4Desc,
     },
   ];
 
@@ -39,17 +52,17 @@ const ProcessSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        <SectionTitle badge={t.process.badge} title="De la estrategia a la medición del impacto" light />
+        <SectionTitle badge={t.process.badge} title={t.process.title} light />
 
         <motion.div variants={fadeInUp} className="text-white/80 max-w-5xl mx-auto mb-12 space-y-6 text-sm md:text-base leading-relaxed">
           <p>
-            Nuestros servicios abarcan todo el ciclo para la implementación de proyectos: desde el diagnóstico, la formulación, ejecución, evaluación y seguimiento. Brindamos asesoría para el impulso y mejoramiento de proyectos existentes en cualquier etapa.
+            {t.process.desc1}
           </p>
           <p>
-            El desarrollo de proyectos y actividades de extensión comunitaria y educación ambiental pueden ser dirigidos a una amplia variedad de audiencias — niñez y adolescencia, empresarios, tomadores de decisión, científicos, entre otros — tanto en contextos urbanos como rurales, territorios indígenas o zonas costeras.
+            {t.process.desc2}
           </p>
           <p>
-            Tanto para capacitación como para fortalecimiento organizacional, acompañamos procesos de cambio con metodologías participativas, técnicas y creativas adaptadas a cada contexto.
+            {t.process.desc3}
           </p>
         </motion.div>
 
@@ -61,7 +74,10 @@ const ProcessSection = ({ id }) => {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                variants={fadeInUp}
+                custom={i}
+                variants={stepVariants}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
                 className="text-center relative"
               >
                 {/* Dot on line */}
