@@ -37,7 +37,36 @@ const translations = {
     },
     services: {
       badge: "Nuestros Servicios",
-      title: "Soluciones integrales para la sostenibilidad empresarial",
+      title: "Soluciones integrales a medida para empresas, instituciones y comunidades",
+      description1: "Asesoramos en la adopción de estrategias para el cumplimiento de estándares de sostenibilidad.",
+      description2: "Impulsamos la integración intersectorial, creando sinergias entre instituciones públicas y privadas y distintos actores sociales para mejorar el entorno productivo y de las comunidades.",
+      description3: "Brindamos asesoría técnica para la formulación de políticas públicas, normativas y planificación a nivel nacional y local.",
+      cards: [
+        {
+          title: "Gestión de Residuos y Economía Circular",
+          titleEN: "Waste Management and Circular Economy",
+          description: "Planes de manejo de residuos sólidos a nivel empresarial, institucional y para eventos masivos. Estrategias de reducción, reutilización y reciclaje. Diseño de procesos basados en circularidad y reducción de huella hídrica y de carbono.",
+          descriptionEN: "Solid waste management plans for businesses, institutions, and large-scale events. Reduction, reuse, and recycling strategies. Process design based on circularity and reduced water and carbon footprints.",
+        },
+        {
+          title: "Diagnósticos y Estrategias de Sostenibilidad",
+          titleEN: "Sustainability Assessments and Strategies",
+          description: "Evaluaciones de huella de carbono y agua. Auditorías de sostenibilidad. Planes de acción para la descarbonización y metas de emisiones netas cero. Diseño de reportes ESG.",
+          descriptionEN: "Carbon and water footprint assessments. Sustainability audits. Action plans for decarbonization and net-zero emissions goals. ESG report design.",
+        },
+        {
+          title: "Educación y Capacitación para el Desarrollo Sostenible",
+          titleEN: "Education and Training for Sustainable Development",
+          description: "Charlas y talleres en temas de sostenibilidad, consumo responsable, reciclaje y manejo de residuos. Diseño de actividades de sensibilización ambiental. Formación en cumplimiento normativo ambiental.",
+          descriptionEN: "Talks and workshops on sustainability, responsible consumption, recycling, and waste management. Design of environmental awareness activities. Training in environmental regulatory compliance.",
+        },
+        {
+          title: "Interpretación Ambiental",
+          titleEN: "Environmental Interpretation",
+          description: "Interpretación de senderos y señalización en fincas y proyectos eco-turísticos. Inventarios de biodiversidad y ciencia ciudadana. Elaboración de materiales didácticos y de comunicación estratégica.",
+          descriptionEN: "Interpretive trails and signage for farms and eco-tourism projects. Biodiversity inventories and citizen science. Development of educational and strategic communication materials.",
+        },
+      ],
       learnMore: "Saber más",
     },
     process: {
@@ -179,7 +208,36 @@ const translations = {
     },
     services: {
       badge: "Our Services",
-      title: "Comprehensive solutions for business sustainability",
+      title: "Comprehensive tailored solutions for businesses, institutions, and communities",
+      description1: "We advise organizations in adopting strategies to meet sustainability standards.",
+      description2: "We promote cross-sector integration, creating synergies between public and private institutions and social stakeholders to strengthen productive environments and communities.",
+      description3: "We provide technical guidance for developing public policy, regulation, and planning at national and local levels.",
+      cards: [
+        {
+          title: "Gestión de Residuos y Economía Circular",
+          titleEN: "Waste Management and Circular Economy",
+          description: "Planes de manejo de residuos sólidos a nivel empresarial, institucional y para eventos masivos. Estrategias de reducción, reutilización y reciclaje. Diseño de procesos basados en circularidad y reducción de huella hídrica y de carbono.",
+          descriptionEN: "Solid waste management plans for businesses, institutions, and large-scale events. Reduction, reuse, and recycling strategies. Process design based on circularity and reduced water and carbon footprints.",
+        },
+        {
+          title: "Diagnósticos y Estrategias de Sostenibilidad",
+          titleEN: "Sustainability Assessments and Strategies",
+          description: "Evaluaciones de huella de carbono y agua. Auditorías de sostenibilidad. Planes de acción para la descarbonización y metas de emisiones netas cero. Diseño de reportes ESG.",
+          descriptionEN: "Carbon and water footprint assessments. Sustainability audits. Action plans for decarbonization and net-zero emissions goals. ESG report design.",
+        },
+        {
+          title: "Educación y Capacitación para el Desarrollo Sostenible",
+          titleEN: "Education and Training for Sustainable Development",
+          description: "Charlas y talleres en temas de sostenibilidad, consumo responsable, reciclaje y manejo de residuos. Diseño de actividades de sensibilización ambiental. Formación en cumplimiento normativo ambiental.",
+          descriptionEN: "Talks and workshops on sustainability, responsible consumption, recycling, and waste management. Design of environmental awareness activities. Training in environmental regulatory compliance.",
+        },
+        {
+          title: "Interpretación Ambiental",
+          titleEN: "Environmental Interpretation",
+          description: "Interpretación de senderos y señalización en fincas y proyectos eco-turísticos. Inventarios de biodiversidad y ciencia ciudadana. Elaboración de materiales didácticos y de comunicación estratégica.",
+          descriptionEN: "Interpretive trails and signage for farms and eco-tourism projects. Biodiversity inventories and citizen science. Development of educational and strategic communication materials.",
+        },
+      ],
       learnMore: "Learn more",
     },
     process: {
