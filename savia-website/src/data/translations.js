@@ -42,6 +42,14 @@ const translations = {
       description1: "Asesoramos en la adopción de estrategias para el cumplimiento de estándares de sostenibilidad.",
       description2: "Impulsamos la integración intersectorial, creando sinergias entre instituciones públicas y privadas y distintos actores sociales para mejorar el entorno productivo y de las comunidades.",
       description3: "Brindamos asesoría técnica para la formulación de políticas públicas, normativas y planificación a nivel nacional y local.",
+      wordPairs: [
+        "Empresas, Instituciones",
+        "Personas, Organizaciones",
+        "Comunidades, Instituciones",
+        "Construcciones, Empresas",
+        "Personas, Comunidades",
+        "Organizaciones, Empresas",
+      ],
       cards: [
         {
           title: "Gestión de Residuos y Economía Circular",
@@ -213,6 +221,14 @@ const translations = {
       description1: "We advise organizations in adopting strategies to meet sustainability standards.",
       description2: "We promote cross-sector integration, creating synergies between public and private institutions and social stakeholders to strengthen productive environments and communities.",
       description3: "We provide technical guidance for developing public policy, regulation, and planning at national and local levels.",
+      wordPairs: [
+        "Companies, Institutions",
+        "People, Organizations",
+        "Communities, Institutions",
+        "Businesses, Companies",
+        "People, Communities",
+        "Organizations, Businesses",
+      ],
       cards: [
         {
           title: "Gestión de Residuos y Economía Circular",
