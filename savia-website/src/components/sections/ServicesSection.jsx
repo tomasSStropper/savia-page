@@ -9,7 +9,10 @@ import { useLang } from '../context/LanguageContext';
 const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
-  const WORD_PAIRS = t.services.wordPairs;
+  const WORD_PAIRS = t.services.wordPairs || [
+    "Empresas, Instituciones",
+    "Personas, Organizaciones"
+  ];
   const [pairIndex, setPairIndex] = useState(0);
 
   useEffect(() => {
