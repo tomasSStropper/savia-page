@@ -8,6 +8,19 @@ const ProcessSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
 
+
+  const stepVariants = {
+    hidden: { opacity: 0, y: 28 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.25,
+        ease: [0.4, 0, 0.2, 1],
+        delay: i * 0.7,
+      },
+    }),
+  };
   const steps = [
     {
       icon: Search,
@@ -61,7 +74,10 @@ const ProcessSection = ({ id }) => {
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                variants={fadeInUp}
+                custom={i}
+                variants={stepVariants}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
                 className="text-center relative"
               >
                 {/* Dot on line */}
