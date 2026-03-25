@@ -17,7 +17,6 @@ const ServicesSection = ({ id }) => {
     itemsEN: [t.services.cards[index].descriptionEN],
   }));
 
-
   return (
     <section id={id} className="section-padding bg-white" ref={ref}>
       <motion.div
