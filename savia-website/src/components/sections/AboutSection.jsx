@@ -6,7 +6,6 @@ import {
   fadeInLeft,
   fadeInRight,
   staggerContainer,
-  fadeInUp,
 } from '../../hooks/useScrollAnimation';
 import { useLang } from '../context/LanguageContext';
 
@@ -16,26 +15,11 @@ const carouselImages = [
   '/images/about-bandera-azul.png',
 ];
 
-const teamItems = [
-  {
-    id: 1,
-    header:
-      'Ariadna Sánchez G. — Profesional en Sostenibilidad, Gestión de Proyectos Socioambientales, Educación e Interpretación Ambiental',
-    body:
-      'Profesional en Manejo de Recursos Naturales con más de 20 años de experiencia en la formulación, coordinación y evaluación de proyectos socioambientales y de extensión comunitaria. Experiencia sólida de trabajo con ONGs, así como consultora para entidades como Cornell University, UCR, UCI, PNUD y empresas privadas en comunidades rurales y costeras de la zona sur y norte del país y a nivel internacional. Experiencia en el desarrollo de iniciativas de conservación y sensibilización ambiental con diversas audiencias adaptando la comunicación estratégica a distintos contextos. Guía naturalista bilingüe (ES/EN) con más de 5.000 horas de facilitación educativa, conducción de grupos e interpretación ambiental. Experiencia en administración de negocios gastronómicos y turísticos. Su formación multidisciplinaria en recursos naturales, turismo y artes fortalece sus habilidades de comunicación, liderazgo y diseño de experiencias orientadas a generar cambios de comportamiento y promover una gobernanza local para el desarrollo sostenible y regenerativo.',
-  },
-  {
-    id: 2,
-    header: 'Carla Azofeifa R. — Consultora en Sostenibilidad',
-    body: 'Falta Resumen',
-  },
-];
-
 const AboutSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [openItem, setOpenItem] = useState(1);
+  const [openTeam, setOpenTeam] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,9 +29,6 @@ const AboutSection = ({ id }) => {
     return () => clearInterval(interval);
   }, []);
 
-  const toggleItem = (itemId) => {
-    setOpenItem((prev) => (prev === itemId ? null : itemId));
-  };
 
   return (
     <section id={id} className="section-padding bg-cream" ref={ref}>
@@ -57,7 +38,7 @@ const AboutSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div variants={fadeInLeft} className="relative">
             <div className="relative rounded-2xl overflow-hidden h-[500px]">
               {carouselImages.map((image, index) => (
@@ -121,33 +102,54 @@ const AboutSection = ({ id }) => {
               </ul>
             </div>
 
-            <div>
-              <h4 className="font-semibold text-primary mb-4">{t.about.teamTitle}</h4>
-              <div className="space-y-3">
-                {teamItems.map((item) => {
-                  const isOpen = openItem === item.id;
+            <div className="mt-8">
+              <h4 className="font-semibold text-primary mb-4">Nuestro Equipo</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Ariadna */}
+                <div className="border border-accent/20 rounded-xl p-4">
+                  <div className="flex flex-col items-center text-center mb-3">
+                    <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+                      <span className="text-accent font-semibold text-lg">AS</span>
+                    </div>
+                    <h5 className="font-semibold text-primary text-sm">Ariadna Sánchez G.</h5>
+                    <p className="text-xs text-accent mt-1">Profesional en Sostenibilidad, Gestión de Proyectos Socioambientales, Educación e Interpretación Ambiental</p>
+                  </div>
+                  <button
+                    onClick={() => setOpenTeam(openTeam === 'ariadna' ? null : 'ariadna')}
+                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-accent transition-colors"
+                  >
+                    <span>Ver perfil completo</span>
+                    <ChevronDown size={14} className={`transition-transform duration-300 ${openTeam === 'ariadna' ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openTeam === 'ariadna' && (
+                    <p className="text-xs text-gray-600 leading-relaxed mt-3 border-t border-accent/10 pt-3">
+                      Profesional en Manejo de Recursos Naturales con más de 20 años de experiencia en la formulación, coordinación y evaluación de proyectos socioambientales y de extensión comunitaria. Experiencia sólida de trabajo con ONGs, así como consultora para entidades como Cornell University, UCR, UCI, PNUD y empresas privadas en comunidades rurales y costeras de la zona sur y norte del país y a nivel internacional. Experiencia en el desarrollo de iniciativas de conservación y sensibilización ambiental con diversas audiencias adaptando la comunicación estratégica a distintos contextos. Guía naturalista bilingüe (ES/EN) con más de 5.000 horas de facilitación educativa, conducción de grupos e interpretación ambiental. Experiencia en administración de negocios gastronómicos y turísticos. Su formación multidisciplinaria en recursos naturales, turismo y artes fortalece sus habilidades de comunicación, liderazgo y diseño de experiencias orientadas a generar cambios de comportamiento y promover una gobernanza local para el desarrollo sostenible y regenerativo.
+                    </p>
+                  )}
+                </div>
 
-                  return (
-                    <motion.div key={item.id} variants={fadeInUp} className="border border-accent/20 rounded-xl p-4">
-                      <button
-                        type="button"
-                        onClick={() => toggleItem(item.id)}
-                        className="w-full text-left flex justify-between items-start cursor-pointer gap-3"
-                      >
-                        <span className="font-medium text-primary text-sm leading-relaxed">{item.header}</span>
-                        <ChevronDown
-                          size={18}
-                          className={`text-primary transition-transform duration-300 ${
-                            isOpen ? 'rotate-180' : 'rotate-0'
-                          }`}
-                        />
-                      </button>
-                      {isOpen ? (
-                        <p className="text-sm text-gray-600 leading-relaxed mt-3">{item.body}</p>
-                      ) : null}
-                    </motion.div>
-                  );
-                })}
+                {/* Carla */}
+                <div className="border border-accent/20 rounded-xl p-4">
+                  <div className="flex flex-col items-center text-center mb-3">
+                    <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+                      <span className="text-accent font-semibold text-lg">CA</span>
+                    </div>
+                    <h5 className="font-semibold text-primary text-sm">Carla Azofeifa R.</h5>
+                    <p className="text-xs text-accent mt-1">Consultora en Sostenibilidad</p>
+                  </div>
+                  <button
+                    onClick={() => setOpenTeam(openTeam === 'carla' ? null : 'carla')}
+                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-accent transition-colors"
+                  >
+                    <span>Ver perfil completo</span>
+                    <ChevronDown size={14} className={`transition-transform duration-300 ${openTeam === 'carla' ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openTeam === 'carla' && (
+                    <p className="text-xs text-gray-600 leading-relaxed mt-3 border-t border-accent/10 pt-3">
+                      Falta Resumen
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>
