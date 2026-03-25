@@ -40,9 +40,9 @@ function App() {
           <AboutSection id="quienes-somos" />
           <ProjectsSection id="proyectos" />
           <TeamSection id="equipo" />
-          <TestimonialsSection />
           <BlogSection id="blog" />
           <GallerySection id="galeria" />
+          <TestimonialsSection />
           <ContactSection id="contacto" />
         </main>
         <Footer />
