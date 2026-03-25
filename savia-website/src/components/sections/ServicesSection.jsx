@@ -1,18 +1,8 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
 import { services } from '../../data/services';
 import { useLang } from '../context/LanguageContext';
-
-const WORD_PAIRS = [
-  'Empresas, Instituciones',
-  'Personas, Organizaciones',
-  'Comunidades, Instituciones',
-  'Construcciones, Empresas',
-  'Personas, Comunidades',
-  'Organizaciones, Empresas',
-];
 
 const UPDATED_SERVICES = [
   {
@@ -40,7 +30,6 @@ const UPDATED_SERVICES = [
 const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
-  const [pairIndex, setPairIndex] = useState(() => Math.floor(Math.random() * WORD_PAIRS.length));
   const mergedServices = services.slice(0, 4).map((service, index) => ({
     ...service,
     title: UPDATED_SERVICES[index].title,
@@ -51,18 +40,6 @@ const ServicesSection = ({ id }) => {
     itemsEN: [UPDATED_SERVICES[index].description],
   }));
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPairIndex((prev) => {
-        let next;
-        do {
-          next = Math.floor(Math.random() * WORD_PAIRS.length);
-        } while (next === prev);
-        return next;
-      });
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section id={id} className="section-padding bg-white" ref={ref}>
@@ -90,20 +67,6 @@ const ServicesSection = ({ id }) => {
           >
             Soluciones integrales a medida para
           </motion.h2>
-          <div className="h-16 md:h-20 flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={pairIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-accent italic"
-              >
-                {WORD_PAIRS[pairIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </div>
         </div>
 
         {/* Description paragraphs (Cambio 3) */}
