@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
 import { services } from '../../data/services';
@@ -9,18 +10,13 @@ const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
   const WORD_PAIRS = t.services.wordPairs;
-  const [pairIndex, setPairIndex] = useState(() => Math.floor(Math.random() * WORD_PAIRS.length));
+  const [pairIndex, setPairIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setPairIndex((prev) => {
-        let next;
-        do {
-          next = Math.floor(Math.random() * WORD_PAIRS.length);
-        } while (next === prev);
-        return next;
-      });
+      setPairIndex((prev) => (prev + 1) % WORD_PAIRS.length);
     }, 3500);
+
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -43,7 +39,6 @@ const ServicesSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        {/* Badge */}
         <div className="text-center mb-6">
           <motion.span
             variants={fadeInUp}
@@ -53,7 +48,6 @@ const ServicesSection = ({ id }) => {
           </motion.span>
         </div>
 
-        {/* Animated Title (Cambio 2) */}
         <div className="text-center mb-8">
           <motion.h2 variants={fadeInUp} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary">
             {t.services.titleLine1}
@@ -74,20 +68,12 @@ const ServicesSection = ({ id }) => {
           </div>
         </div>
 
-        {/* Description paragraphs (Cambio 3) */}
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <p className="text-gray-600 font-body text-base leading-relaxed">
-            {t.services.desc1}
-          </p>
-          <p className="text-gray-600 font-body text-base leading-relaxed">
-            {t.services.desc2}
-          </p>
-          <p className="text-gray-600 font-body text-base leading-relaxed">
-            {t.services.desc3}
-          </p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc1}</p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc2}</p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc3}</p>
         </motion.div>
 
-        {/* Existing service cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {mergedServices.map((service) => (
             <ServiceCard key={service.id} service={service} />
