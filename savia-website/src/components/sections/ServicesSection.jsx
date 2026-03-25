@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
