@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
 import { services } from '../../data/services';
@@ -35,12 +34,12 @@ const ServicesSection = ({ id }) => {
   const [pairIndex, setPairIndex] = useState(() => Math.floor(Math.random() * WORD_PAIRS.length));
   const mergedServices = services.slice(0, 4).map((service, index) => ({
     ...service,
-    title: UPDATED_SERVICES[index].title,
-    titleEN: UPDATED_SERVICES[index].title,
-    description: UPDATED_SERVICES[index].description,
-    descriptionEN: UPDATED_SERVICES[index].description,
-    items: [UPDATED_SERVICES[index].description],
-    itemsEN: [UPDATED_SERVICES[index].description],
+    title: t.services.cards[index].title,
+    titleEN: t.services.cards[index].titleEN,
+    description: t.services.cards[index].description,
+    descriptionEN: t.services.cards[index].descriptionEN,
+    items: [t.services.cards[index].description],
+    itemsEN: [t.services.cards[index].descriptionEN],
   }));
 
   useEffect(() => {
@@ -82,20 +81,6 @@ const ServicesSection = ({ id }) => {
           >
             {t.services.titleLine1}
           </motion.h2>
-          <div className="h-16 md:h-20 flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={pairIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-accent italic"
-              >
-                {WORD_PAIRS[pairIndex]}
-              </motion.span>
-            </AnimatePresence>
-          </div>
         </div>
 
         {/* Description paragraphs (Cambio 3) */}

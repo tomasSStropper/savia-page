@@ -1,3 +1,4 @@
+// Conflict resolution note: retain PR #22 bilingual localization content.
 const translations = {
   es: {
     nav: {
