@@ -9,10 +9,26 @@ const ProcessSection = ({ id }) => {
   const { t } = useLang();
 
   const steps = [
-    { icon: Search, title: t.process.step1Title, desc: t.process.step1Desc },
-    { icon: FileText, title: t.process.step2Title, desc: t.process.step2Desc },
-    { icon: Settings, title: t.process.step3Title, desc: t.process.step3Desc },
-    { icon: Award, title: t.process.step4Title, desc: t.process.step4Desc },
+    {
+      icon: Search,
+      title: 'Diagnóstico Inicial',
+      desc: 'Analizamos el estado actual del sitio para el establecimiento de la línea base.',
+    },
+    {
+      icon: FileText,
+      title: 'De narrativa → a cuantificación',
+      desc: 'Formulamos un plan contextualizado con metas claras, tiempos y KPIs medibles.',
+    },
+    {
+      icon: Settings,
+      title: 'Implementación',
+      desc: 'Acompañamos la ejecución con soporte continuo e insumos.',
+    },
+    {
+      icon: Award,
+      title: 'De presentaciones ESG → a modelos de ACV',
+      desc: 'Llevamos la comunicación de resultados a procesos de evaluación de impactos reales de productos o procesos a través de Análisis de Ciclo de Vida.',
+    },
   ];
 
   return (
@@ -23,7 +39,19 @@ const ProcessSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        <SectionTitle badge={t.process.badge} title={t.process.title} light />
+        <SectionTitle badge="Cómo Trabajamos" title="De la estrategia a la medición del impacto" light />
+
+        <motion.div variants={fadeInUp} className="text-white/80 max-w-5xl mx-auto mb-12 space-y-6 text-sm md:text-base leading-relaxed">
+          <p>
+            Nuestros servicios abarcan todo el ciclo para la implementación de proyectos: desde el diagnóstico, la formulación, ejecución, evaluación y seguimiento. Brindamos asesoría para el impulso y mejoramiento de proyectos existentes en cualquier etapa.
+          </p>
+          <p>
+            El desarrollo de proyectos y actividades de extensión comunitaria y educación ambiental pueden ser dirigidos a una amplia variedad de audiencias — niñez y adolescencia, empresarios, tomadores de decisión, científicos, entre otros — tanto en contextos urbanos como rurales, territorios indígenas o zonas costeras.
+          </p>
+          <p>
+            Tanto para capacitación como para fortalecimiento organizacional, acompañamos procesos de cambio con metodologías participativas, técnicas y creativas adaptadas a cada contexto.
+          </p>
+        </motion.div>
 
         <div className="relative">
           {/* Connection line - desktop */}
