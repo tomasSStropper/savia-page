@@ -52,7 +52,10 @@ const ServicesSection = ({ id }) => {
         </div>
 
         <div className="text-center mb-8">
-          <motion.h2 variants={fadeInUp} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary">
+          <motion.h2
+            variants={fadeInUp}
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary"
+          >
             {t.services.titleLine1}
           </motion.h2>
           <div className="h-16 md:h-20 flex items-center justify-center overflow-hidden">
