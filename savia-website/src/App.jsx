@@ -8,7 +8,6 @@ import ProcessSection from './components/sections/ProcessSection';
 import TeamSection from './components/sections/TeamSection';
 import ProjectsSection from './components/sections/ProjectsSection';
 import TestimonialsSection from './components/sections/TestimonialsSection';
-import BlogSection from './components/sections/BlogSection';
 import GallerySection from './components/sections/GallerySection';
 import ContactSection from './components/sections/ContactSection';
 import { LanguageProvider } from './components/context/LanguageContext';
@@ -40,7 +39,6 @@ function App() {
           <AboutSection id="quienes-somos" />
           <ProjectsSection id="proyectos" />
           <TeamSection id="equipo" />
-          <BlogSection id="blog" />
           <GallerySection id="galeria" />
           <TestimonialsSection />
           <ContactSection id="contacto" />

@@ -7,7 +7,6 @@ const translations = {
       howWeWork: "Cómo trabajamos",
       about: "Quiénes somos",
       projects: "Proyectos",
-      blog: "Blog y Noticias",
       gallery: "Galería",
       contact: "Contacto",
       cta: "Agendá una reunión",
@@ -26,7 +25,7 @@ const translations = {
     about: {
       badge: "Quiénes Somos",
       title: "Quiénes Somos",
-      description: "SAVIA es una firma costarricense conformada por un equipo interdisciplinario comprometido con la sostenibilidad. Diseñamos e implementamos soluciones integrales e innovadoras que generan impacto ambiental y social. Integramos asesoría técnica, creatividad y optimización de recursos para desarrollar proyectos estratégicos que fortalecen la educación ambiental y la vinculación comunitaria como motores de cambio. Acompañamos a empresas y comunidades en la transición hacia modelos más sostenibles y regenerativos, alineados con los Objetivos de Desarrollo Sostenible (ODS). Convertimos la sostenibilidad en decisiones concretas y resultados medibles, relevantes y transformadoras. Construimos un presente y futuro sostenible, juntos.",
+      description: "Somos un equipo interdisciplinario comprometido con la sostenibilidad. Diseñamos e implementamos soluciones integrales e innovadoras que generan impacto ambiental y social. Integramos asesoría técnica, creatividad y optimización de recursos para desarrollar proyectos estratégicos que fortalecen la educación ambiental y la vinculación comunitaria como motores de cambio. Acompañamos a empresas y comunidades en la transición hacia modelos más sostenibles y regenerativos, alineados con los Objetivos de Desarrollo Sostenible (ODS). Convertimos la sostenibilidad en decisiones concretas y resultados medibles, relevantes y transformadoras. Construimos un presente y futuro sostenible, juntos.",
       mission: "Promover decisiones estratégicas que impulsen el desarrollo sostenible, la eficiencia de recursos y el bienestar colectivo.",
       value1: "trabajamos con transparencia y compromiso ético.",
       value2: "aplicamos metodologías basadas en evidencia.",
@@ -105,31 +104,6 @@ const translations = {
       badge: "Testimonios",
       title: "Lo que dicen nuestros clientes",
     },
-    blog: {
-      badge: "Blog y Noticias",
-      title: "Últimas novedades en sostenibilidad",
-      readMore: "Leer más",
-      posts: [
-        {
-          title: "Tendencias en sostenibilidad corporativa para 2026",
-          excerpt: "Descubrí las principales tendencias que están transformando la forma en que las empresas abordan la sostenibilidad en Costa Rica y la región centroamericana.",
-          date: "10 Mar 2026",
-          category: "Sostenibilidad",
-        },
-        {
-          title: "Guía para obtener la Bandera Azul Ecológica",
-          excerpt: "Todo lo que necesitás saber sobre el programa Bandera Azul Ecológica: requisitos, proceso de aplicación y beneficios para tu organización.",
-          date: "25 Feb 2026",
-          category: "Certificaciones",
-        },
-        {
-          title: "Soluciones basadas en naturaleza: casos de éxito",
-          excerpt: "Exploramos cómo las soluciones basadas en naturaleza están generando impacto positivo en comunidades y empresas de Costa Rica.",
-          date: "12 Feb 2026",
-          category: "Naturaleza",
-        },
-      ],
-    },
     gallery: {
       badge: "Galería",
       title: "Nuestro trabajo en imágenes",
@@ -170,7 +144,6 @@ const translations = {
       aboutUs: "Nosotros",
       ourProjects: "Proyectos",
       ourTeam: "Equipo",
-      blog: "Blog",
       contactTitle: "Contacto",
       whatsapp: "Escribir por WhatsApp",
       rights: "Todos los derechos reservados.",
@@ -185,7 +158,6 @@ const translations = {
       howWeWork: "How we work",
       about: "About us",
       projects: "Projects",
-      blog: "Blog & News",
       gallery: "Gallery",
       contact: "Contact",
       cta: "Schedule a meeting",
@@ -204,7 +176,7 @@ const translations = {
     about: {
       badge: "About Us",
       title: "Who We Are",
-      description: "SAVIA is a Costa Rican firm made up of an interdisciplinary team committed to sustainability. We design and implement comprehensive and innovative solutions that generate environmental and social impact. We integrate technical advisory, creativity and resource optimization to develop strategic projects that strengthen environmental education and community engagement as drivers of change. We accompany companies and communities in the transition towards more sustainable and regenerative models, aligned with the Sustainable Development Goals (SDGs). We turn sustainability into concrete decisions and measurable, relevant and transformative results. We build a sustainable present and future, together.",
+      description: "We are an interdisciplinary team committed to sustainability. We design and implement comprehensive and innovative solutions that generate environmental and social impact. We integrate technical advisory, creativity and resource optimization to develop strategic projects that strengthen environmental education and community engagement as drivers of change. We accompany companies and communities in the transition towards more sustainable and regenerative models, aligned with the Sustainable Development Goals (SDGs). We turn sustainability into concrete decisions and measurable, relevant and transformative results. We build a sustainable present and future, together.",
       mission: "To promote strategic decisions that drive sustainable development, resource efficiency and collective well-being.",
       value1: "we work with transparency and ethical commitment.",
       value2: "we apply evidence-based methodologies.",
@@ -283,31 +255,6 @@ const translations = {
       badge: "Testimonials",
       title: "What our clients say",
     },
-    blog: {
-      badge: "Blog & News",
-      title: "Latest sustainability updates",
-      readMore: "Read more",
-      posts: [
-        {
-          title: "Corporate sustainability trends for 2026",
-          excerpt: "Discover the main trends transforming how companies approach sustainability in Costa Rica and the Central American region.",
-          date: "Mar 10, 2026",
-          category: "Sustainability",
-        },
-        {
-          title: "Guide to obtaining the Blue Flag Ecological certification",
-          excerpt: "Everything you need to know about the Blue Flag Ecological program: requirements, application process and benefits for your organization.",
-          date: "Feb 25, 2026",
-          category: "Certifications",
-        },
-        {
-          title: "Nature-based solutions: success stories",
-          excerpt: "We explore how nature-based solutions are generating positive impact in communities and businesses across Costa Rica.",
-          date: "Feb 12, 2026",
-          category: "Nature",
-        },
-      ],
-    },
     gallery: {
       badge: "Gallery",
       title: "Our work in images",
@@ -348,7 +295,6 @@ const translations = {
       aboutUs: "About Us",
       ourProjects: "Projects",
       ourTeam: "Team",
-      blog: "Blog",
       contactTitle: "Contact",
       whatsapp: "Message on WhatsApp",
       rights: "All rights reserved.",

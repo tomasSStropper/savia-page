@@ -66,38 +66,60 @@ const ProcessSection = ({ id }) => {
           </p>
         </motion.div>
 
-        <div className="relative">
-          {/* Connection line - desktop */}
-          <div className="hidden md:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-accent/30" />
+        {/* Serpentine / snake layout: row 1 -> 1,2 ; row 2 -> 4,3 (right to left) */}
+        <div className="relative max-w-5xl mx-auto">
+          {/* S-curve connector that guides the reading 1 -> 2 -> 3 -> 4 (desktop only) */}
+          <svg
+            className="hidden md:block absolute inset-0 w-full h-full pointer-events-none z-0"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M 24 26 H 71 Q 76 26 76 33 V 67 Q 76 74 71 74 H 24"
+              fill="none"
+              stroke="#52B788"
+              strokeWidth="0.45"
+              strokeDasharray="1.6 1.8"
+              strokeOpacity="0.45"
+              strokeLinecap="round"
+            />
+          </svg>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                custom={i}
-                variants={stepVariants}
-                initial="hidden"
-                animate={inView ? 'visible' : 'hidden'}
-                className="text-center relative"
-              >
-                {/* Dot on line */}
-                <div className="relative mx-auto mb-6">
-                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mx-auto relative z-10">
-                    <step.icon size={28} className="text-accent" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-28 md:gap-y-14 relative z-10">
+            {steps.map((step, i) => {
+              // Snake placement: 1 top-left, 2 top-right, 3 bottom-right, 4 bottom-left
+              const placement = [
+                'md:col-start-1 md:row-start-1',
+                'md:col-start-2 md:row-start-1',
+                'md:col-start-2 md:row-start-2',
+                'md:col-start-1 md:row-start-2',
+              ][i];
+              return (
+                <motion.div
+                  key={i}
+                  custom={i}
+                  variants={stepVariants}
+                  initial="hidden"
+                  animate={inView ? 'visible' : 'hidden'}
+                  className={`relative ${placement}`}
+                >
+                  <div className="relative h-full rounded-2xl border border-accent/15 bg-white/5 backdrop-blur-sm p-7 md:p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:bg-white/[0.07]">
+                    {/* Icon circle + numbered badge */}
+                    <div className="relative mx-auto mb-6 w-16 h-16">
+                      <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center relative z-10">
+                        <step.icon size={28} className="text-accent" />
+                      </div>
+                      <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gold text-dark text-xs font-bold flex items-center justify-center z-20">
+                        {i + 1}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-white mb-3">{step.title}</h3>
+                    <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
                   </div>
-                  <span className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gold text-dark text-xs font-bold flex items-center justify-center">
-                    {i + 1}
-                  </span>
-                </div>
-                <h3 className="font-display text-lg font-bold text-white mb-3">{step.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed max-w-xs mx-auto">{step.desc}</p>
-
-                {/* Vertical connection line for mobile */}
-                {i < steps.length - 1 && (
-                  <div className="md:hidden w-0.5 h-8 bg-accent/30 mx-auto mt-6" />
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </motion.div>

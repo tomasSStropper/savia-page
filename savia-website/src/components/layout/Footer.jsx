@@ -79,7 +79,6 @@ const Footer = () => {
                 { label: t.footer.aboutUs, to: 'quienes-somos' },
                 { label: t.footer.ourProjects, to: 'proyectos' },
                 { label: t.footer.ourTeam, to: 'equipo' },
-                { label: t.footer.blog, to: 'blog' },
               ].map(({ label, to }) => (
                 <li key={to}>
                   <ScrollLink

@@ -23,7 +23,6 @@ const Navbar = () => {
     { label: t.nav.howWeWork, to: 'como-trabajamos' },
     { label: t.nav.about, to: 'quienes-somos' },
     { label: t.nav.projects, to: 'proyectos' },
-    { label: t.nav.blog, to: 'blog' },
     { label: t.nav.gallery, to: 'galeria' },
     { label: t.nav.contact, to: 'contacto' },
   ];
