@@ -78,12 +78,7 @@ export default function HeroSection({ id }) {
           {/* LEFT */}
           <div style={{flex:1,maxWidth:640,paddingRight:48}}>
 
-            <div className="bp f1" style={{marginBottom:32}}>
-              <div style={{width:6,height:6,borderRadius:"50%",background:"#5aaa7a",flexShrink:0}}/>
-              <span style={{fontSize:".72rem",color:"rgba(242,237,228,.8)",letterSpacing:".12em",textTransform:"uppercase"}}>Impulsando soluciones basadas en naturaleza.</span>
-            </div>
-
-            <h1 className="ht f2" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 8px 0",letterSpacing:"-.01em"}}>
+            <h1 className="ht f1" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 8px 0",letterSpacing:"-.01em"}}>
               Soluciones basadas<br/>en naturaleza, para
             </h1>
 
