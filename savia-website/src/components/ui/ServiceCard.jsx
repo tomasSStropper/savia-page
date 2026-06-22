@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { scroller } from 'react-scroll';
 import * as Icons from 'lucide-react';
 import { fadeInUp } from '../../hooks/useScrollAnimation';
 import { useLang } from '../context/LanguageContext';
@@ -10,6 +11,9 @@ const ServiceCard = ({ service }) => {
   const IconComponent = Icons[service.icon];
   const title = lang === 'es' ? service.title : service.titleEN;
   const bullets = (lang === 'es' ? service.bullets : service.bulletsEN) || [];
+
+  const goToContact = () =>
+    scroller.scrollTo('contacto', { smooth: true, duration: 800, offset: -80 });
 
   return (
     <motion.div
@@ -63,7 +67,8 @@ const ServiceCard = ({ service }) => {
         </ul>
 
         <button
-          className="mt-auto text-sm font-semibold flex items-center gap-2 transition-colors"
+          onClick={goToContact}
+          className="mt-auto text-sm font-semibold flex items-center gap-2 transition-colors hover:opacity-70"
           style={{ color: service.color }}
         >
           {t.services.learnMore}

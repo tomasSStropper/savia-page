@@ -43,7 +43,7 @@ const ServicesSection = ({ id }) => {
         <div className="text-center mb-6">
           <motion.span
             variants={fadeInUp}
-            className="inline-block px-6 py-2.5 rounded-full text-base font-medium bg-accent/10 text-secondary border border-accent/20"
+            className="inline-block px-6 py-2.5 rounded-full text-base md:text-lg font-medium bg-accent/10 text-secondary border border-accent/20"
           >
             {t.services.badge}
           </motion.span>
