@@ -28,10 +28,8 @@ const ServicesSection = ({ id }) => {
     ...service,
     title: t.services.cards[index].title,
     titleEN: t.services.cards[index].titleEN,
-    description: t.services.cards[index].description,
-    descriptionEN: t.services.cards[index].descriptionEN,
-    items: [t.services.cards[index].description],
-    itemsEN: [t.services.cards[index].descriptionEN],
+    bullets: t.services.cards[index].bullets || [],
+    bulletsEN: t.services.cards[index].bulletsEN || [],
   }));
 
   return (
@@ -45,7 +43,7 @@ const ServicesSection = ({ id }) => {
         <div className="text-center mb-6">
           <motion.span
             variants={fadeInUp}
-            className="inline-block px-4 py-2 rounded-full text-sm font-medium bg-accent/10 text-secondary border border-accent/20"
+            className="inline-block px-6 py-2.5 rounded-full text-base font-medium bg-accent/10 text-secondary border border-accent/20"
           >
             {t.services.badge}
           </motion.span>
@@ -75,9 +73,9 @@ const ServicesSection = ({ id }) => {
         </div>
 
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc1}</p>
-          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc2}</p>
-          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.desc3}</p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.description1}</p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.description2}</p>
+          <p className="text-gray-600 font-body text-base leading-relaxed">{t.services.description3}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
