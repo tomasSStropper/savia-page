@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { scroller } from "react-scroll";
+import LeafWatermark from "../LeafWatermark";
 
 const SLIDES = [
   { img: "/images/hero-circle.jpg",   label: "Talleres comunitarios",                        credit: "Foto: C. Faerron" },
   { img: "/images/hero-outdoor.jpg",  label: "Educación en campo",                            credit: "Foto: A. Sánchez" },
-  { img: "/images/hero-kids.jpg",     label: "Ciencia ciudadana",                             credit: "Foto: C. Nourissat" },
+  { img: "/images/hero-ciencia.jpg",  label: "Ciencia ciudadana",                             credit: "Foto: C. Nourissat" },
   { img: "/images/hero-workshop.jpg", label: "Diagnósticos empresariales y organizacionales", credit: "Foto: Nicoya Peninsula WaterKeeper" },
 ];
 
@@ -59,6 +60,9 @@ export default function HeroSection({ id }) {
         <div style={{position:"absolute",right:"38%",top:"30%",width:480,height:480,borderRadius:"50%",background:"radial-gradient(circle,rgba(90,170,122,.1) 0%,transparent 70%)",pointerEvents:"none",zIndex:1}}/>
         {/* left line */}
         <div style={{position:"absolute",left:28,top:"50%",transform:"translateY(-50%)",width:1,height:"38%",background:"linear-gradient(to bottom,transparent,#5aaa7a,transparent)",opacity:.35,zIndex:3}}/>
+
+        {/* veladura de hoja */}
+        <LeafWatermark />
 
         {/* BODY */}
         <div className="hi" style={{flex:1,display:"flex",alignItems:"center",padding:"0 64px",position:"relative",zIndex:5}}>
