@@ -5,6 +5,7 @@ export const services = [
     title: "Diagnóstico Ambiental",
     titleEN: "Environmental Diagnosis",
     color: "#52B788",
+    image: "/images/servicio-residuos.jpg",
     description: "Evaluación integral del estado ambiental de tu empresa para identificar oportunidades de mejora y cumplimiento normativo.",
     descriptionEN: "Comprehensive evaluation of your company's environmental status to identify improvement opportunities and regulatory compliance.",
     items: [
@@ -28,6 +29,7 @@ export const services = [
     title: "Estrategia de Sostenibilidad",
     titleEN: "Sustainability Strategy",
     color: "#C9A84C",
+    image: "/images/servicio-sostenibilidad.jpg",
     description: "Diseño e implementación de planes estratégicos alineados con ODS y marcos internacionales de reporte ESG.",
     descriptionEN: "Design and implementation of strategic plans aligned with SDGs and international ESG reporting frameworks.",
     items: [
@@ -51,6 +53,7 @@ export const services = [
     title: "Certificaciones Ambientales",
     titleEN: "Environmental Certifications",
     color: "#2D6A4F",
+    image: "/images/servicio-educacion.jpg",
     description: "Acompañamiento experto para obtener y mantener las certificaciones ambientales más valoradas en Costa Rica y Centroamérica.",
     descriptionEN: "Expert guidance to obtain and maintain the most valued environmental certifications in Costa Rica and Central America.",
     items: [
@@ -74,6 +77,7 @@ export const services = [
     title: "Capacitación y Cultura",
     titleEN: "Training & Culture",
     color: "#1B4332",
+    image: "/images/servicio-interpretacion.jpg",
     description: "Programas de formación para equipos internos que buscan integrar la sostenibilidad como parte del ADN corporativo.",
     descriptionEN: "Training programs for internal teams seeking to integrate sustainability as part of the corporate DNA.",
     items: [
