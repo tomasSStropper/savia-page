@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
+import { scroller } from "react-scroll";
 
 const SLIDES = [
-  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos institucionales y empresariales" },
-  { img: null,                           label: "Trabajo de campo", placeholder: true },
-  { img: "/images/hero-kids.jpg",        label: "Ciencia ciudadana" },
-  { img: "/images/hero-workshop.jpg",    label: "Diagnósticos empresariales y organizacionales" },
-  { img: "/images/hero-circle.jpg",      label: "Talleres comunitarios" },
-  { img: "/images/hero-outdoor.jpg",     label: "Educación en campo" },
+  { img: "/images/hero-circle.jpg",   label: "Talleres comunitarios",                        credit: "Foto: C. Faerron" },
+  { img: "/images/hero-outdoor.jpg",  label: "Educación en campo",                            credit: "Foto: A. Sánchez" },
+  { img: "/images/hero-kids.jpg",     label: "Ciencia ciudadana",                             credit: "Foto: C. Nourissat" },
+  { img: "/images/hero-workshop.jpg", label: "Diagnósticos empresariales y organizacionales", credit: "Foto: Nicoya Peninsula WaterKeeper" },
 ];
 
-const AUDIENCES = ["empresas", "comunidades", "instituciones", "personas"];
-
 export default function HeroSection({ id }) {
-  const [slide, setSlide]           = useState(0);
-  const [audienceIdx, setAudienceIdx] = useState(0);
-  const [wordFading, setWordFading] = useState(false);
+  const [slide, setSlide] = useState(0);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -23,13 +18,7 @@ export default function HeroSection({ id }) {
     return () => clearInterval(t);
   }, []);
 
-  useEffect(() => {
-    const t = setInterval(() => {
-      setWordFading(true);
-      setTimeout(() => { setAudienceIdx(i => (i + 1) % AUDIENCES.length); setWordFading(false); }, 300);
-    }, 2500);
-    return () => clearInterval(t);
-  }, []);
+  const go = (to) => scroller.scrollTo(to, { smooth: true, duration: 800, offset: -80 });
 
   return (
     <>
@@ -71,32 +60,27 @@ export default function HeroSection({ id }) {
         {/* left line */}
         <div style={{position:"absolute",left:28,top:"50%",transform:"translateY(-50%)",width:1,height:"38%",background:"linear-gradient(to bottom,transparent,#5aaa7a,transparent)",opacity:.35,zIndex:3}}/>
 
- main
         {/* BODY */}
         <div className="hi" style={{flex:1,display:"flex",alignItems:"center",padding:"0 64px",position:"relative",zIndex:5}}>
 
           {/* LEFT */}
           <div style={{flex:1,maxWidth:640,paddingRight:48}}>
 
-            <h1 className="ht f1" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 8px 0",letterSpacing:"-.01em"}}>
-              Soluciones basadas<br/>en naturaleza, para
+            <h1 className="ht f1" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,color:"#f2ede4",margin:"0 0 32px 0",letterSpacing:"-.01em"}}>
+              Soluciones basadas<br/>en naturaleza.
             </h1>
-
-            <div className="f3" style={{fontFamily:"'Cormorant Garamond',serif",fontSize:"clamp(3rem,4.8vw,4.4rem)",fontWeight:300,lineHeight:1.1,marginBottom:28,height:"1.15em",overflow:"hidden"}}>
-              <span className={`aw${wordFading?" fd":""}`}>{AUDIENCES[audienceIdx]}</span>
-            </div>
 
             <p className="f4" style={{fontSize:"1rem",fontWeight:300,lineHeight:1.75,color:"rgba(242,237,228,.62)",maxWidth:500,margin:"0 0 40px 0",letterSpacing:".01em"}}>
               Asesoramos a personas, empresas, instituciones y comunidades en la implementación de estrategias sostenibles que generan valor ambiental, social y económico.
             </p>
 
             <div className="f5" style={{display:"flex",alignItems:"center",gap:28,marginBottom:56,flexWrap:"wrap"}}>
-              <button className="btn-p">Conocé nuestros servicios <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-              <button className="btn-s">Ver proyectos →</button>
+              <button className="btn-p" onClick={()=>go('servicios')}>Conocé nuestros servicios <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+              <button className="btn-s" onClick={()=>go('proyectos')}>Ver proyectos →</button>
             </div>
 
             <div className="sr f6" style={{display:"flex",alignItems:"flex-start",gap:0,paddingTop:32,borderTop:"1px solid rgba(242,237,228,.1)"}}>
-              {[{num:"25+",label:"Años de experiencia"},{num:"5000+",label:"Personas abordadas"},{num:"40+",label:"Empresas asesoradas"}].map((s,i)=>(
+              {[{num:"25+",label:"Años de experiencia"},{num:"5000+",label:"Personas abordadas"},{num:"5+",label:"Países"}].map((s,i)=>(
                 <div key={i} style={{display:"flex",alignItems:"flex-start",gap:0}}>
                   {i>0&&<div style={{width:1,background:"rgba(242,237,228,.12)",alignSelf:"stretch",margin:"0 32px"}}/>}
                   <div>
@@ -130,7 +114,10 @@ export default function HeroSection({ id }) {
             <div style={{position:"absolute",bottom:20,left:20,width:28,height:28,borderBottom:"2px solid #b8935a",borderLeft:"2px solid #b8935a",zIndex:2,opacity:.7}}/>
             {/* bottom bar */}
             <div style={{position:"absolute",bottom:24,left:24,right:24,zIndex:2,display:"flex",alignItems:"flex-end",justifyContent:"space-between"}}>
-              <span style={{fontSize:".72rem",letterSpacing:".15em",color:"rgba(242,237,228,.65)",textTransform:"uppercase"}}>{SLIDES[slide].label}</span>
+              <div style={{display:"flex",flexDirection:"column",gap:3}}>
+                <span style={{fontSize:".72rem",letterSpacing:".15em",color:"rgba(242,237,228,.65)",textTransform:"uppercase"}}>{SLIDES[slide].label}</span>
+                {SLIDES[slide].credit && <span style={{fontSize:".58rem",letterSpacing:".06em",color:"rgba(242,237,228,.42)"}}>{SLIDES[slide].credit}</span>}
+              </div>
               <div style={{display:"flex",gap:6,alignItems:"center"}}>
                 {SLIDES.map((_,i)=>(
                   <button key={i} className={`sdot${slide===i?" act":""}`} onClick={()=>setSlide(i)} aria-label={`Slide ${i+1}`}/>
