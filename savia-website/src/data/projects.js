@@ -1,56 +1,152 @@
+// Datos de proyectos de Savia.
+// status: "curso" = Proyectos en curso | "pasado" = Proyectos y actividades pasadas
+// Campos opcionales: si no existen, simplemente no se muestran en la tarjeta.
+// image: null por ahora -> se muestra el placeholder de marca. Coordinar fotos luego.
+
 export const projects = [
+  // ===================== PROYECTOS EN CURSO =====================
   {
-    id: 1,
-    title: "Neutralidad de Carbono — Grupo Corporativo Nacional",
-    titleEN: "Carbon Neutrality — National Corporate Group",
-    category: "Carbono",
-    categoryEN: "Carbon",
-    sector: "Manufactura",
-    sectorEN: "Manufacturing",
-    year: "2023",
-    challenge: "Empresa manufacturera con huella de carbono no medida y presión de mercado internacional para certificarse.",
-    challengeEN: "Manufacturing company with unmeasured carbon footprint and international market pressure to certify.",
-    solution: "Diagnóstico de emisiones Alcance 1, 2 y 3. Plan de reducción a 5 años. Acompañamiento hasta certificación INTE B5.",
-    solutionEN: "Scope 1, 2, and 3 emissions diagnosis. 5-year reduction plan. Guidance through INTE B5 certification.",
-    results: ["Reducción 34% emisiones en 18 meses", "Certificación Carbono Neutral obtenida", "Acceso a mercados europeos"],
-    resultsEN: ["34% emission reduction in 18 months", "Carbon Neutral certification obtained", "Access to European markets"],
-    image: "https://images.unsplash.com/photo-1497435334941-8c899a57cdfc?w=600",
-    tags: ["Carbono Neutral", "ISO 14064", "INTE B5"]
+    id: "curso-1",
+    status: "curso",
+    title: "Manejo adecuado de los materiales valorizables de las islas Venado y Caballo",
+    location: "Golfo de Nicoya",
+    tags: ["Gestión de Residuos", "Economía Circular", "Fortalecimiento de capacidades"],
+    challenge:
+      "Contribuir a la salud pública de los habitantes, a la protección de los ecosistemas marino-costeros y a la conservación de la biodiversidad en las islas Venado y Caballo —reconocidas como patrimonio natural del Estado— mediante el fortalecimiento del modelo comunitario de gestión de residuos sólidos valorizables.",
+    partners: "PNUD, ADI Isla Venado, UNA, Instituciones Públicas.",
+    image: null, // Foto pendiente: no compartir hasta tener el permiso.
   },
   {
-    id: 2,
-    title: "Bandera Azul Ecológica — Municipalidad Regional",
-    titleEN: "Blue Flag Ecological — Regional Municipality",
-    category: "Certificación",
-    categoryEN: "Certification",
-    sector: "Gobierno Local",
-    sectorEN: "Local Government",
-    year: "2023",
-    challenge: "Municipalidad sin cultura ambiental interna ni procesos documentados para aplicar a Bandera Azul.",
-    challengeEN: "Municipality without internal environmental culture or documented processes to apply for Blue Flag.",
-    solution: "Diagnóstico organizacional, capacitación a 80 funcionarios, implementación de sistemas de gestión de residuos y agua.",
-    solutionEN: "Organizational diagnosis, training for 80 officials, implementation of waste and water management systems.",
-    results: ["1ª Estrella Bandera Azul obtenida", "80 funcionarios capacitados", "Sistema de reciclaje operativo"],
-    resultsEN: ["1st Blue Flag Star obtained", "80 officials trained", "Operational recycling system"],
-    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600",
-    tags: ["Bandera Azul", "Gestión Residuos", "Gobierno"]
+    id: "curso-2",
+    status: "curso",
+    title: "Actividades y proyectos de sensibilización y educación ambiental",
+    location: "Orotina de Alajuela, Paraíso de Cartago, Carrillo de Guanacaste",
+    tags: ["Recurso Hídrico", "Biodiversidad", "Gestión de Residuos"],
+    challenge:
+      "Sensibilizar e impulsar la participación de las y los residentes de proyectos habitacionales en acciones de sostenibilidad.",
+    partners: "Empresa Consultoría Mar Azul S.A, sociedad civil.",
+    image: null,
   },
   {
-    id: 3,
-    title: "Estrategia ESG — Empresa Hotelera de Lujo",
-    titleEN: "ESG Strategy — Luxury Hotel Company",
-    category: "ESG",
-    categoryEN: "ESG",
-    sector: "Turismo",
-    sectorEN: "Tourism",
-    year: "2024",
-    challenge: "Hotel boutique que necesitaba demostrar impacto ambiental positivo para atraer turistas de alto valor y certificarse CST.",
-    challengeEN: "Boutique hotel that needed to demonstrate positive environmental impact to attract high-value tourists and obtain CST certification.",
-    solution: "Diagnóstico ambiental integral, reporte GRI simplificado, implementación de economía circular en cocina y habitaciones.",
-    solutionEN: "Comprehensive environmental diagnosis, simplified GRI report, circular economy implementation in kitchen and rooms.",
-    results: ["Certificación CST obtenida", "Reporte GRI publicado", "+45% turistas ecológicos"],
-    resultsEN: ["CST Certification obtained", "GRI Report published", "+45% eco-tourists"],
-    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600",
-    tags: ["ESG", "GRI", "CST Turismo"]
-  }
+    id: "curso-3",
+    status: "curso",
+    title: "Comisión Manejo Integral de Residuos Sólidos",
+    location: "Cóbano, Puntarenas",
+    tags: ["Gestión de Residuos", "Gobernanza", "Economía Circular", "Descarbonización"],
+    challenge:
+      "Lograr una Gestión Integral de Residuos Sólidos en el Distrito de Cóbano por medio de la coordinación e interacción de los actores sociales.",
+    partners: "Ministerio de Salud, MAG, ADIs, ONGs, sociedad civil.",
+    image: null,
+  },
+  {
+    id: "curso-4",
+    status: "curso",
+    title: "Educación en manejo de cuencas y monitoreo participativo",
+    location: "Cóbano, Puntarenas",
+    tags: ["Manejo de cuencas", "Ciencia ciudadana", "Biodiversidad", "Servicios Ecosistémicos"],
+    challenge:
+      "Sensibilizar y educar sobre el manejo y protección de la cuenca del río Ario mediante actividades de monitoreo participativo.",
+    partners: "Asociación CIRENAS, Stroud Water Research Center, MEP, sociedad civil.",
+    credit: "Foto: Pablo “Chespi” Elizondo",
+    image: null,
+  },
+
+  // ===================== PROYECTOS Y ACTIVIDADES PASADAS =====================
+  {
+    id: "pasado-1",
+    status: "pasado",
+    title: "Eco-Maletas: Eco-alfabetización con enfoque lúdico",
+    location: "Coto Brus, Puntarenas",
+    tags: [
+      "Biodiversidad y Servicios Ecosistémicos",
+      "Contaminación",
+      "Cambio Climático",
+      "Educación para el Desarrollo Sostenible",
+    ],
+    challenge:
+      "Facilitar procesos educativos de grupos académicos y comunitarios a través del aporte de herramientas didácticas que fomenten un mayor interés hacia problemas socio-ambientales y enriquezcan el conocimiento en cómo dar solución a los mismos mediante la adopción de buenos hábitos ambientales.",
+    results: [
+      "18 escuelas del cantón de Coto Brus con 1 Eco-Maleta como herramienta educativa para las clases de ciencias, estudios sociales, educación cívica, matemáticas y agricultura.",
+      "Incremento de la comprensión de estudiantes y profesores sobre ecosistemas, beneficios de los bosques, contaminación y residuos sólidos, y cambio climático.",
+      "Aumento de la integración de la OET y las comunidades que rodean la E.B. Las Cruces.",
+    ],
+    implementation: "Organization for Tropical Studies.",
+    partners: "MEP, Banco Nacional, HB Fuller Foundation.",
+    links: [
+      { label: "Sitio del proyecto", url: "https://ecomaletas.wordpress.com/" },
+      { label: "Video", url: "https://www.youtube.com/watch?v=3uLf7Mtl5V4" },
+    ],
+    image: null,
+  },
+  {
+    id: "pasado-2",
+    status: "pasado",
+    title: "Ocean Friendly Business",
+    location: "Santa Teresa, Cóbano",
+    tags: ["Incentivos para la sostenibilidad", "Certificación", "Asesoría empresarial"],
+    // FALTA: en el mockup el "Desafío" de este proyecto aparece igual al de Eco-Maletas
+    // (parece copy-paste). Confirmar el texto correcto del desafío de Ocean Friendly Business.
+    challenge:
+      "Facilitar la transición de comercios hacia prácticas más sostenibles mediante asesoría, certificación e incentivos.",
+    results: [
+      "Más de 30 comercios transicionaron hacia prácticas más sostenibles.",
+      "18 comercios certificados como OFB.",
+      "Disminución del consumo de plásticos de un solo uso y de productos químicos cosméticos y de limpieza.",
+    ],
+    implementation: "Nicoya Peninsula Waterkeeper.",
+    partners: "Municipalidad de Cóbano, Ministerio de Salud, Sector Comercial.",
+    links: [
+      {
+        label: "Sitio del proyecto",
+        url: "https://www.nicoyawaterkeeper.org/en/ocean-friendly-business",
+      },
+    ],
+    image: null,
+  },
+  {
+    id: "pasado-3",
+    status: "pasado",
+    title: "Centro de Acopio Waterkeeper-Bionic",
+    location: "Cóbano, Puntarenas",
+    tags: ["Gestión de Residuos", "Alianzas estratégicas", "Cambio de comportamiento"],
+    // FALTA: el "Desafío" de este proyecto estaba en blanco en el mockup.
+    challenge: null,
+    results: [
+      "5 rutas diarias de recolección y 11 estaciones de reciclaje establecidas.",
+      "+700 usuarios.",
+      "+1400 ton de materiales valorizables recuperados.",
+      "12 empleos.",
+      "+30% de cobertura en comercios.",
+    ],
+    implementation: "Nicoya Peninsula Waterkeeper.",
+    partners: "Bionic, Municipalidad de Cóbano, Vivero Lacom.",
+    image: null,
+  },
+
+  // FALTA: 4º proyecto pasado ("Proyecto C") estaba todo en xxxx. Cuando tengas los datos,
+  // descomentá este bloque y completá los campos.
+  // {
+  //   id: "pasado-4",
+  //   status: "pasado",
+  //   title: "",                 // FALTA
+  //   location: "",              // FALTA
+  //   tags: [],                  // FALTA
+  //   challenge: null,           // FALTA
+  //   results: [],               // FALTA
+  //   implementation: "",        // FALTA
+  //   partners: "",              // FALTA
+  //   image: null,
+  // },
 ];
+
+// Bloque especial al final de "Pasados": no son proyectos con foto, es una lista.
+export const otherActivities = {
+  title: "Otras actividades realizadas",
+  items: [
+    "Sala de Educación Ambiental",
+    "Detectives de Aves",
+    "Capacitaciones para Guías de Turismo Naturalista",
+    "Festival Eco-Cultural Las Cruces",
+    "Sistemas de captación de aguas pluviales",
+  ],
+};
