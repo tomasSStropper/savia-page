@@ -1,7 +1,7 @@
 export const services = [
   {
     id: 1,
-    icon: "Leaf",
+    icon: "Recycle",
     title: "Diagnóstico Ambiental",
     titleEN: "Environmental Diagnosis",
     color: "#2D6A4F",
@@ -25,7 +25,7 @@ export const services = [
   },
   {
     id: 2,
-    icon: "BarChart3",
+    icon: "Gauge",
     title: "Estrategia de Sostenibilidad",
     titleEN: "Sustainability Strategy",
     color: "#2D6A4F",
@@ -49,7 +49,7 @@ export const services = [
   },
   {
     id: 3,
-    icon: "GraduationCap",
+    icon: "Lightbulb",
     title: "Certificaciones Ambientales",
     titleEN: "Environmental Certifications",
     color: "#2D6A4F",
@@ -73,7 +73,7 @@ export const services = [
   },
   {
     id: 4,
-    icon: "Compass",
+    icon: "Bird",
     title: "Capacitación y Cultura",
     titleEN: "Training & Culture",
     color: "#2D6A4F",
