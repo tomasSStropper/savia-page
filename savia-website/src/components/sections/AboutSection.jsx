@@ -21,42 +21,45 @@ const AboutSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        <motion.div variants={fadeInUp} className="max-w-3xl mx-auto">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
-            {t.about.title}
-          </h2>
+        <motion.div variants={fadeInUp} className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="md:col-span-2">
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-6 leading-tight">
+                {t.about.title}
+              </h2>
 
-          <p className="text-gray-600 leading-relaxed mb-8">{t.about.description}</p>
+              <p className="text-gray-600 leading-relaxed mb-8">{t.about.description}</p>
 
-          <div className="mb-6">
-            <h4 className="font-semibold text-primary mb-2">Misión:</h4>
-            <p className="text-sm text-gray-600 leading-relaxed">{t.about.mission}</p>
-          </div>
+              <div className="mb-6">
+                <h4 className="font-semibold text-primary mb-2">Misión:</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">{t.about.mission}</p>
+              </div>
 
-          <div className="mb-8">
-            <h4 className="font-semibold text-primary mb-3">Valores:</h4>
-            <ul className="space-y-2">
-              <li className="text-sm text-gray-600">
-                <span className="font-semibold text-primary">Integridad:</span> {t.about.value1}
-              </li>
-              <li className="text-sm text-gray-600">
-                <span className="font-semibold text-primary">Rigor técnico:</span> {t.about.value2}
-              </li>
-              <li className="text-sm text-gray-600">
-                <span className="font-semibold text-primary">Innovación:</span> {t.about.value3}
-              </li>
-              <li className="text-sm text-gray-600">
-                <span className="font-semibold text-primary">Colaboración:</span> {t.about.value4}
-              </li>
-            </ul>
-          </div>
-
-          <div className="flex justify-center my-10">
-            <img
-              src="/images/logo-savia-trans-espanol.png"
-              alt="Savia — Empowering nature-wise solutions"
-              className="w-64 md:w-72 h-auto"
-            />
+              <div className="mb-8">
+                <h4 className="font-semibold text-primary mb-3">Valores:</h4>
+                <ul className="space-y-2">
+                  <li className="text-sm text-gray-600">
+                    <span className="font-semibold text-primary">Integridad:</span> {t.about.value1}
+                  </li>
+                  <li className="text-sm text-gray-600">
+                    <span className="font-semibold text-primary">Rigor técnico:</span> {t.about.value2}
+                  </li>
+                  <li className="text-sm text-gray-600">
+                    <span className="font-semibold text-primary">Innovación:</span> {t.about.value3}
+                  </li>
+                  <li className="text-sm text-gray-600">
+                    <span className="font-semibold text-primary">Colaboración:</span> {t.about.value4}
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="flex justify-center md:justify-end">
+              <img
+                src="/images/logo-savia-espanol-negro.png"
+                alt="Savia — Asesorías en Sostenibilidad"
+                className="w-48 md:w-full max-w-[230px] h-auto"
+              />
+            </div>
           </div>
 
           <div className="mt-8">
