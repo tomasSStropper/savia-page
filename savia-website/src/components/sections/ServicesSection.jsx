@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
 import { services } from '../../data/services';
@@ -7,6 +8,20 @@ import { useLang } from '../context/LanguageContext';
 const ServicesSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
   const { t } = useLang();
+  const WORD_PAIRS = t.services.wordPairs || [
+    "Empresas, Instituciones",
+    "Personas, Organizaciones"
+  ];
+  const [pairIndex, setPairIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPairIndex((prev) => (prev + 1) % WORD_PAIRS.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const mergedServices = services.slice(0, 4).map((service, index) => ({
     ...service,
@@ -36,10 +51,24 @@ const ServicesSection = ({ id }) => {
         <div className="text-center mb-8">
           <motion.h2
             variants={fadeInUp}
-            className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary max-w-4xl mx-auto"
+            className="font-display text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-primary"
           >
-            {t.services.title}
+            {t.services.titleLine1}
           </motion.h2>
+          <div className="h-16 md:h-20 flex items-center justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={pairIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+                className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-secondary italic"
+              >
+                {WORD_PAIRS[pairIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
         </div>
 
         <motion.div variants={fadeInUp} className="text-center max-w-3xl mx-auto mb-16 space-y-4">
