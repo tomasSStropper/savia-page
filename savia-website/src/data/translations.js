@@ -134,7 +134,7 @@ const translations = {
       results: "Resultados",
     },
     testimonials: {
-      badge: "Testimonios",
+      badge: "Participantes",
       title: "Lo que dicen nuestros clientes",
     },
     gallery: {
@@ -318,7 +318,7 @@ const translations = {
       results: "Results",
     },
     testimonials: {
-      badge: "Testimonials",
+      badge: "Participants",
       title: "What our clients say",
     },
     gallery: {

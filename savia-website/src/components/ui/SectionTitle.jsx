@@ -9,7 +9,7 @@ const SectionTitle = ({ badge, title, light = false }) => {
         className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 ${
           light
             ? 'bg-white/10 text-light border border-white/20'
-            : 'bg-accent/10 text-secondary border border-accent/20'
+            : 'bg-primary text-cream border border-primary'
         }`}
       >
         {badge}

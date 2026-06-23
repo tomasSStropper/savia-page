@@ -84,10 +84,8 @@ export const projects = [
     title: "Ocean Friendly Business",
     location: "Santa Teresa, Cóbano",
     tags: ["Incentivos para la sostenibilidad", "Certificación", "Asesoría empresarial"],
-    // FALTA: en el mockup el "Desafío" de este proyecto aparece igual al de Eco-Maletas
-    // (parece copy-paste). Confirmar el texto correcto del desafío de Ocean Friendly Business.
     challenge:
-      "Facilitar la transición de comercios hacia prácticas más sostenibles mediante asesoría, certificación e incentivos.",
+      "Facilitar procesos educativos de grupos académicos y comunitarios a través del aporte de herramientas didácticas que fomenten un mayor interés hacia problemas socio-ambientales y enriquezcan el conocimiento en cómo dar solución a los mismos mediante la adopción de buenos hábitos ambientales.",
     results: [
       "Más de 30 comercios transicionaron hacia prácticas más sostenibles.",
       "18 comercios certificados como OFB.",
