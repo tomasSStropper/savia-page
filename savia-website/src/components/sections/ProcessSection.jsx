@@ -108,6 +108,10 @@ const ProcessSection = ({ id }) => {
       <LeafWatermark style={{ left: 'auto', right: '-60px', top: '30%', height: '360px', opacity: 0.07, transform: 'rotate(-150deg)' }} />
       <LeafWatermark style={{ left: 'auto', right: '24%', top: 'auto', bottom: '-90px', height: '220px', opacity: 0.06, transform: 'rotate(-35deg)' }} />
       <LeafWatermark style={{ left: '8%', top: 'auto', bottom: '-70px', height: '200px', opacity: 0.06, transform: 'rotate(60deg)' }} />
+      <LeafWatermark style={{ left: '-40px', top: '46%', height: '250px', opacity: 0.05, transform: 'rotate(-80deg)' }} />
+      <LeafWatermark style={{ left: '14%', top: '-40px', height: '190px', opacity: 0.05, transform: 'rotate(-25deg)' }} />
+      <LeafWatermark style={{ left: 'auto', right: '-45px', top: '58%', height: '270px', opacity: 0.06, transform: 'rotate(125deg)' }} />
+      <LeafWatermark style={{ left: 'auto', right: '16%', top: '-35px', height: '180px', opacity: 0.05, transform: 'rotate(160deg)' }} />
 
       <motion.div
         variants={staggerContainer}
@@ -115,7 +119,15 @@ const ProcessSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max relative z-10"
       >
-        <SectionTitle badge={t.process.badge} title="De la estrategia a la medición del impacto" light />
+        <div className="text-center">
+          <motion.span
+            variants={fadeInUp}
+            className="inline-block px-5 py-2 rounded-md text-sm font-medium mb-6 bg-white/10 text-light border border-white/20"
+          >
+            {t.process.badge}
+          </motion.span>
+        </div>
+        <SectionTitle title="De la estrategia a la medición del impacto" light />
 
         <motion.div
           variants={fadeInUp}

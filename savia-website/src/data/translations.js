@@ -110,7 +110,7 @@ const translations = {
       learnMore: "Saber más",
     },
     process: {
-      badge: "Nuestro Proceso",
+      badge: "Cómo trabajamos",
       title: "Metodología probada para resultados reales",
       step1Title: "Diagnóstico Inicial",
       step1Desc: "Evaluamos el estado actual ambiental de tu empresa en una sesión gratuita de 60 minutos.",
@@ -294,7 +294,7 @@ const translations = {
       learnMore: "Learn more",
     },
     process: {
-      badge: "Our Process",
+      badge: "How we work",
       title: "Proven methodology for real results",
       step1Title: "Initial Diagnosis",
       step1Desc: "We evaluate your company's current environmental status in a free 60-minute session.",
