@@ -51,6 +51,14 @@ const AboutSection = ({ id }) => {
             </ul>
           </div>
 
+          <div className="flex justify-center my-10">
+            <img
+              src="/images/logo-savia-trans-espanol.png"
+              alt="Savia — Empowering nature-wise solutions"
+              className="w-64 md:w-72 h-auto"
+            />
+          </div>
+
           <div className="mt-8">
             <h4 className="font-semibold text-primary mb-4">Nuestro Equipo</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
@@ -93,7 +101,7 @@ const AboutSection = ({ id }) => {
                   </div>
                   <h5 className="font-semibold text-primary text-sm text-center mb-1">Carla Azofeifa R.</h5>
                   <p className="text-xs text-accent text-center leading-tight mb-3">
-                    Consultora en Sostenibilidad
+                    Biología, Gestión de Proyectos, Educación No Formal
                   </p>
                   <div className="h-px bg-gray-100 mb-3" />
                   <button
@@ -108,7 +116,7 @@ const AboutSection = ({ id }) => {
                   </button>
                   {openTeam === 'carla' && (
                     <p className="text-xs text-gray-600 leading-relaxed mt-3 pt-3 border-t border-gray-100">
-                      Falta Resumen
+                      Profesional en sostenibilidad, educación y gestión ambiental con experiencia en el diseño, coordinación y evaluación de programas educativos, comunitarios y operativos. Mi formación en Biología y Ciencias de la Administración Educativa me permite integrar la ciencia, la pedagogía y la gestión para promover la conservación, la economía circular y el desarrollo local sostenible. He trabajado en entornos académicos y multiculturales, articulando proyectos de conservación, sostenibilidad y gestión de residuos junto a organizaciones nacionales e internacionales. Me reconozco por el liderazgo colaborativo, capacidad de adaptación y un compromiso con el aprendizaje continuo. En mi trayectoria, he transitado con éxito desde la educación ambiental participativa hasta la dirección operativa de centros de acopio, impulsando la eficiencia productiva, el fortalecimiento de equipos y la creación de alianzas estratégicas.
                     </p>
                   )}
                 </div>
