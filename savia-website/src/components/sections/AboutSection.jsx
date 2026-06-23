@@ -66,20 +66,20 @@ const AboutSection = ({ id }) => {
             <h4 className="font-semibold text-primary mb-4">Nuestro Equipo</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
               {/* Ariadna */}
-              <div className="border border-accent/20 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent">
+              <div className="bg-white border border-primary/15 rounded-xl overflow-hidden shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-secondary">
                 <div className="h-1.5 bg-gradient-to-r from-secondary to-accent" />
                 <div className="p-4">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:bg-accent">
-                    <span className="text-accent font-semibold text-lg">AS</span>
+                  <div className="w-16 h-16 rounded-full bg-primary border-2 border-primary flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <span className="text-cream font-semibold text-lg">AS</span>
                   </div>
                   <h5 className="font-semibold text-primary text-sm text-center mb-1">Ariadna Sánchez G.</h5>
-                  <p className="text-xs text-accent text-center leading-tight mb-3">
+                  <p className="text-xs text-secondary font-medium text-center leading-tight mb-3">
                     Profesional en Sostenibilidad, Gestión de Proyectos Socioambientales, Educación e Interpretación Ambiental
                   </p>
                   <div className="h-px bg-gray-100 mb-3" />
                   <button
                     onClick={() => setOpenTeam(openTeam === 'ariadna' ? null : 'ariadna')}
-                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-accent transition-colors"
+                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-secondary transition-colors"
                   >
                     <span>{openTeam === 'ariadna' ? 'Cerrar perfil' : 'Ver perfil completo'}</span>
                     <ChevronDown
@@ -96,20 +96,20 @@ const AboutSection = ({ id }) => {
               </div>
 
               {/* Carla */}
-              <div className="border border-accent/20 rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-accent">
+              <div className="bg-white border border-primary/15 rounded-xl overflow-hidden shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-secondary">
                 <div className="h-1.5 bg-gradient-to-r from-secondary to-accent" />
                 <div className="p-4">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center mx-auto mb-3">
-                    <span className="text-accent font-semibold text-lg">CA</span>
+                  <div className="w-16 h-16 rounded-full bg-primary border-2 border-primary flex items-center justify-center mx-auto mb-3 shadow-md">
+                    <span className="text-cream font-semibold text-lg">CA</span>
                   </div>
                   <h5 className="font-semibold text-primary text-sm text-center mb-1">Carla Azofeifa R.</h5>
-                  <p className="text-xs text-accent text-center leading-tight mb-3">
+                  <p className="text-xs text-secondary font-medium text-center leading-tight mb-3">
                     Biología, Gestión de Proyectos, Educación No Formal
                   </p>
                   <div className="h-px bg-gray-100 mb-3" />
                   <button
                     onClick={() => setOpenTeam(openTeam === 'carla' ? null : 'carla')}
-                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-accent transition-colors"
+                    className="w-full flex items-center justify-between text-xs text-gray-500 hover:text-secondary transition-colors"
                   >
                     <span>{openTeam === 'carla' ? 'Cerrar perfil' : 'Ver perfil completo'}</span>
                     <ChevronDown

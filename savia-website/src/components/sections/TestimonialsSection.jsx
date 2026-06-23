@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollAnimation, staggerContainer } from '../../hooks/useScrollAnimation';
 import SectionTitle from '../ui/SectionTitle';
+import LeafWatermark from '../LeafWatermark';
 import { useLang } from '../context/LanguageContext';
 
 const testimonials = {
@@ -65,14 +66,35 @@ const TestimonialsSection = () => {
   const next = () => setCurrent((c) => (c + 1) % items.length);
 
   return (
-    <section className="section-padding bg-cream" ref={ref}>
+    <section
+      className="section-padding relative overflow-hidden"
+      style={{ backgroundColor: '#0d2218' }}
+      ref={ref}
+    >
+      {/* textura: grano sutil */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nT'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nT)' opacity='0.045'/%3E%3C/svg%3E\")",
+        }}
+      />
+      {/* brillo sutil superior */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(circle at 50% 0%, rgba(90,170,122,0.12), transparent 55%)' }}
+      />
+      {/* hojas de marca tenues */}
+      <LeafWatermark style={{ left: '-55px', top: '8%', height: '300px', opacity: 0.06, transform: 'rotate(18deg)' }} />
+      <LeafWatermark style={{ left: 'auto', right: '-55px', top: 'auto', bottom: '-60px', height: '300px', opacity: 0.06, transform: 'rotate(-160deg)' }} />
+
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="container-max"
+        className="container-max relative z-10"
       >
-        <SectionTitle badge={t.testimonials.badge} title={t.testimonials.title} />
+        <SectionTitle badge={t.testimonials.badge} title={t.testimonials.title} light />
 
         <div className="max-w-3xl mx-auto relative">
           <AnimatePresence mode="wait">
