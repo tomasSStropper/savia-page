@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Mail, Phone, Clock, MessageCircle, CheckCircle, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, CheckCircle, Send } from 'lucide-react';
 import { useScrollAnimation, fadeInLeft, fadeInRight, staggerContainer } from '../../hooks/useScrollAnimation';
 import SectionTitle from '../ui/SectionTitle';
 import { useLang } from '../context/LanguageContext';
@@ -21,21 +21,24 @@ const ContactSection = ({ id }) => {
 
   const onSubmit = (data) => {
     setSending(true);
-    // Build WhatsApp message
-    const message = encodeURIComponent(
-      `Hola SAVIA! Soy ${data.name} de ${data.company}.\n` +
+    // Enviar la consulta por correo a Savia
+    const subject = encodeURIComponent(
+      `Nueva consulta de ${data.name}${data.company ? ` - ${data.company}` : ''}`
+    );
+    const body = encodeURIComponent(
+      `Nombre: ${data.name}\n` +
+      `Empresa / Organización: ${data.company}\n` +
       `Email: ${data.email}\n` +
-      `Teléfono: ${data.phone || 'No proporcionado'}\n` +
-      `Consulta: ${data.queryType}\n` +
-      `Mensaje: ${data.message}`
+      `Teléfono: ${data.phone || 'No proporcionado'}\n\n` +
+      `Mensaje:\n${data.message}`
     );
     setTimeout(() => {
-      window.open(`https://wa.me/50600000000?text=${message}`, '_blank');
+      window.location.href = `mailto:info@saviasacr.com?subject=${subject}&body=${body}`;
       setSending(false);
       setSubmitted(true);
       reset();
       setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+    }, 600);
   };
 
   const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all";
@@ -61,7 +64,7 @@ const ContactSection = ({ id }) => {
                 {[
                   { icon: Mail, text: t.contact.info.email },
                   { icon: Phone, text: t.contact.info.phone },
-                  { icon: Clock, text: t.contact.info.hours },
+                  { icon: MapPin, text: t.contact.info.location },
                 ].map(({ icon: Icon, text }, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -74,7 +77,7 @@ const ContactSection = ({ id }) => {
 
             {/* WhatsApp button */}
             <a
-              href="https://wa.me/50600000000"
+              href="https://wa.me/50683505275"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all"
@@ -145,22 +148,6 @@ const ContactSection = ({ id }) => {
                   />
                 </div>
 
-                {/* Query type */}
-                <div>
-                  <select
-                    {...register('queryType', { required: true })}
-                    className={inputClass}
-                    defaultValue=""
-                  >
-                    <option value="" disabled>{t.contact.queryType}</option>
-                    <option value="diagnosis">{t.contact.queryOptions.diagnosis}</option>
-                    <option value="certification">{t.contact.queryOptions.certification}</option>
-                    <option value="training">{t.contact.queryOptions.training}</option>
-                    <option value="other">{t.contact.queryOptions.other}</option>
-                  </select>
-                  {errors.queryType && <p className={errorClass}>*</p>}
-                </div>
-
                 {/* Message */}
                 <div>
                   <textarea
@@ -176,6 +163,7 @@ const ContactSection = ({ id }) => {
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
+                    defaultChecked
                     {...register('consent')}
                     className="mt-1 w-4 h-4 accent-primary"
                   />

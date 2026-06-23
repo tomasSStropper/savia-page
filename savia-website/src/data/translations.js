@@ -164,9 +164,9 @@ const translations = {
       successMessage: "Nos pondremos en contacto contigo pronto.",
       info: {
         title: "Información de contacto",
-        email: "info@saviasustainability.cr",
+        email: "info@saviasacr.com",
         phone: "(506) 8350-5275 / 8696-8913",
-        location: "San José, Costa Rica",
+        location: "Costa Rica",
         hours: "Lunes a Viernes, 8:00 - 17:00",
       },
     },
@@ -348,9 +348,9 @@ const translations = {
       successMessage: "We will contact you soon.",
       info: {
         title: "Contact Information",
-        email: "info@saviasustainability.cr",
+        email: "info@saviasacr.com",
         phone: "(506) 8350-5275 / 8696-8913",
-        location: "San José, Costa Rica",
+        location: "Costa Rica",
         hours: "Monday to Friday, 8:00 - 17:00",
       },
     },
