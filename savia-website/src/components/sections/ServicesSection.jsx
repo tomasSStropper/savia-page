@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useScrollAnimation';
 import ServiceCard from '../ui/ServiceCard';
+import BranchWatermark from '../ui/BranchWatermark';
 import { services } from '../../data/services';
 import { useLang } from '../context/LanguageContext';
 
@@ -32,12 +33,15 @@ const ServicesSection = ({ id }) => {
   }));
 
   return (
-    <section id={id} className="section-padding bg-cream" ref={ref}>
+    <section id={id} className="section-padding bg-cream relative overflow-hidden" ref={ref}>
+      <BranchWatermark style={{ top: '-30px', right: '-20px', height: '42vh', opacity: 0.14, transform: 'rotate(150deg)' }} />
+      <BranchWatermark style={{ top: 'auto', bottom: '-30px', left: '-20px', right: 'auto', height: '36vh', opacity: 0.12, transform: 'rotate(-25deg) scaleX(-1)' }} />
+
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
-        className="container-max"
+        className="container-max relative z-10"
       >
         <div className="text-center mb-6">
           <motion.span
