@@ -4,11 +4,9 @@ import { useScrollAnimation, staggerContainer, fadeInUp } from '../../hooks/useS
 import SectionTitle from '../ui/SectionTitle';
 import ProjectCard from '../ui/ProjectCard';
 import { projects, otherActivities } from '../../data/projects';
-import { useLang } from '../context/LanguageContext';
 
 const ProjectsSection = ({ id }) => {
   const { ref, inView } = useScrollAnimation();
-  const { t } = useLang();
 
   const enCurso = projects.filter((p) => p.status === 'curso');
   const pasados = projects.filter((p) => p.status === 'pasado');
@@ -21,14 +19,18 @@ const ProjectsSection = ({ id }) => {
         animate={inView ? 'visible' : 'hidden'}
         className="container-max"
       >
-        <SectionTitle badge={t.projects.badge} title="Proyectos y Actividades" />
+        <SectionTitle title="Proyectos y Actividades" />
 
         {/* ---- Proyectos en curso ---- */}
         <motion.h3
           variants={fadeInUp}
-          className="font-display text-2xl font-bold text-primary mb-6 mt-4"
+          className="flex items-center gap-3 mb-6 mt-4"
         >
-          Proyectos en curso
+          <span className="w-1.5 h-7 rounded-full bg-gradient-to-b from-secondary to-accent flex-shrink-0" />
+          <span className="font-display text-2xl font-bold text-primary uppercase tracking-wide">
+            Proyectos en curso
+          </span>
+          <span className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {enCurso.map((project) => (
@@ -39,9 +41,13 @@ const ProjectsSection = ({ id }) => {
         {/* ---- Proyectos y actividades pasadas ---- */}
         <motion.h3
           variants={fadeInUp}
-          className="font-display text-2xl font-bold text-primary mb-6 mt-16"
+          className="flex items-center gap-3 mb-6 mt-16"
         >
-          Proyectos y actividades pasadas
+          <span className="w-1.5 h-7 rounded-full bg-gradient-to-b from-secondary to-accent flex-shrink-0" />
+          <span className="font-display text-2xl font-bold text-primary uppercase tracking-wide">
+            Proyectos y actividades pasadas
+          </span>
+          <span className="flex-1 h-px bg-gradient-to-r from-accent/40 to-transparent" />
         </motion.h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {pasados.map((project) => (
