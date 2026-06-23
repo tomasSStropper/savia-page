@@ -38,7 +38,7 @@ const ContactSection = ({ id }) => {
     }, 1000);
   };
 
-  const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all";
+  const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all";
   const errorClass = "text-red-500 text-xs mt-1";
 
   return (
@@ -64,8 +64,8 @@ const ContactSection = ({ id }) => {
                   { icon: Clock, text: t.contact.info.hours },
                 ].map(({ icon: Icon, text }, i) => (
                 <div key={i} className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                    <Icon size={22} className="text-accent" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon size={22} className="text-primary" />
                   </div>
                   <span className="text-gray-600">{text}</span>
                 </div>
@@ -77,7 +77,7 @@ const ContactSection = ({ id }) => {
               href="https://wa.me/50600000000"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-accent text-white rounded-full font-semibold hover:bg-accent/90 transition-all"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all"
             >
               <MessageCircle size={20} />
               {t.footer.whatsapp}
@@ -91,9 +91,9 @@ const ContactSection = ({ id }) => {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="bg-accent/10 rounded-2xl p-12 text-center h-full flex flex-col items-center justify-center"
+                className="bg-primary/10 rounded-2xl p-12 text-center h-full flex flex-col items-center justify-center"
               >
-                <CheckCircle size={48} className="text-accent mb-4" />
+                <CheckCircle size={48} className="text-primary mb-4" />
                 <h3 className="font-display text-2xl font-bold text-primary mb-2">
                   {t.contact.successTitle}
                 </h3>
@@ -177,7 +177,7 @@ const ContactSection = ({ id }) => {
                   <input
                     type="checkbox"
                     {...register('consent')}
-                    className="mt-1 w-4 h-4 accent-accent"
+                    className="mt-1 w-4 h-4 accent-primary"
                   />
                   <span className="text-sm text-gray-500">{t.contact.consent}</span>
                 </label>
