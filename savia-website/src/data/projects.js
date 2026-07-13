@@ -101,26 +101,6 @@ export const projects = [
     ],
     image: null,
   },
-  {
-    id: "pasado-3",
-    status: "pasado",
-    title: "Centro de Acopio Waterkeeper-Bionic",
-    location: "Cóbano, Puntarenas",
-    tags: ["Gestión de Residuos", "Alianzas estratégicas", "Cambio de comportamiento"],
-    // FALTA: el "Desafío" de este proyecto estaba en blanco en el mockup.
-    challenge: null,
-    results: [
-      "5 rutas diarias de recolección y 11 estaciones de reciclaje establecidas.",
-      "+700 usuarios.",
-      "+1400 ton de materiales valorizables recuperados.",
-      "12 empleos.",
-      "+30% de cobertura en comercios.",
-    ],
-    implementation: "Nicoya Peninsula Waterkeeper.",
-    partners: "Bionic, Municipalidad de Cóbano, Vivero Lacom.",
-    image: null,
-  },
-
   // FALTA: 4º proyecto pasado ("Proyecto C") estaba todo en xxxx. Cuando tengas los datos,
   // descomentá este bloque y completá los campos.
   // {
