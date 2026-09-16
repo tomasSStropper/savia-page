@@ -4,10 +4,8 @@ import Footer from './components/layout/Footer';
 import HeroSection from './components/sections/HeroSection';
 import AboutSection from './components/sections/AboutSection';
 import ServicesSection from './components/sections/ServicesSection';
-import ProcessSection from './components/sections/ProcessSection';
 import TeamSection from './components/sections/TeamSection';
 import ProjectsSection from './components/sections/ProjectsSection';
-import TestimonialsSection from './components/sections/TestimonialsSection';
 import GallerySection from './components/sections/GallerySection';
 import ContactSection from './components/sections/ContactSection';
 import { LanguageProvider } from './components/context/LanguageContext';
@@ -41,12 +39,10 @@ function App() {
         <main>
           <HeroSection id="inicio" />
           <ServicesSection id="servicios" />
-          <ProcessSection id="como-trabajamos" />
           <AboutSection id="quienes-somos" />
           <ProjectsSection id="proyectos" />
           <TeamSection id="equipo" />
           <GallerySection id="galeria" />
-          <TestimonialsSection />
           <ContactSection id="contacto" />
         </main>
         <Footer />
